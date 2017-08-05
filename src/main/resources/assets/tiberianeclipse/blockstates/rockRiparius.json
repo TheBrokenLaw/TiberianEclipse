@@ -2,7 +2,7 @@
   "forge_marker": 1,
   "defaults": {
     "textures": {
-      "all": "tiberianeclipse:blocks/oreTiberium"
+      "all": "tiberianeclipse:blocks/rockRiparius"
     }
   },
   "variants": {

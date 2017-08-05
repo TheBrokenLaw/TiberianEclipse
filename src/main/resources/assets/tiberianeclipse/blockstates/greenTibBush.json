@@ -34,8 +34,17 @@
         "textures": {
           "cross": "tiberianeclipse:blocks/greenTibBush/5"
         }
+      },
+      "6": {
+        "textures": {
+          "cross": "tiberianeclipse:blocks/greenTibBush/6"
+        }
+      },
+      "7": {
+        "textures": {
+          "cross": "tiberianeclipse:blocks/greenTibBush/7"
+        }
       }
-
     }
   }
 }

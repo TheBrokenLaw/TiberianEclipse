@@ -7,17 +7,18 @@ import tiberianeclipse.Main;
 import tiberianeclipse.block.ModBlocks;
 import tiberianeclipse.util.IModelProvider;
 
-public class ItemGreenShard extends ItemSeeds implements IModelProvider {
+public class ItemRipariusShard extends ItemSeeds implements IModelProvider {
 
-        public ItemGreenShard() {
+        public ItemRipariusShard() {
             super(ModBlocks.greenTibBush, Blocks.GRASS);
-            setUnlocalizedName("greenShard");
-            setRegistryName("greenShard");
+            setUnlocalizedName("ripariusShard");
+            setRegistryName("ripariusShard");
+            setCreativeTab(Main.creativeTab);
         }
 
         @Override
         public void registerItemModel(Item item) {
-            Main.proxy.registerItemRenderer(item, 0, "greenShard");
+            Main.proxy.registerItemRenderer(item, 0, "ripariusShard");
         }
 
     }

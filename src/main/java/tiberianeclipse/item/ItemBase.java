@@ -13,6 +13,7 @@ public class ItemBase extends Item implements IModelProvider{
         this.name = name;
         setUnlocalizedName(name);
         setRegistryName(name);
+        setCreativeTab(Main.creativeTab);
     }
     @Override
     public void registerItemModel(Item item) {

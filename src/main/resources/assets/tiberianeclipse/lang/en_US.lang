@@ -1,5 +1,24 @@
 # Items
-item.greenShard.name=Green Tiberium Shard
+item.ripariusShard.name=Riparius Shard
+item.viniferaShard.name=Vinifera Shard
+item.cruentusShard.name=Cruentus Shard
+item.arboreaShard.name=Arborea Shard
+item.ripariusCluster.name=Riparius Cluster
+item.viniferaCluster.name=Vinifera Cluster
+item.cruentusCluster.name=Cruentus Cluster
+item.arboreaCluster.name=Arborea Cluster
+item.ripVinCluster.name=Riparius-Vinifera Cluster
+item.vinRipCluster.name=Vinifera-Riparius Cluster
+item.vinCruCluster.name=Vinifera-Cruentus Cluster
+item.cruVinCluster.name=Cruentus-Vinifera Cluster
+item.cruArborCluster.name=Cruentus-Arborea Cluster
+item.arborCruCluster.name=Arborea-Cruentus Cluster
 
 # Blocks
-tile.oreTiberium.name=Green Tiberium Rock
+tile.rockRiparius.name=Riparius Stone
+tile.rockVinifera.name=Vinifera Stone
+tile.rockCruentus.name=Cruentus Stone
+tile.rockArborea.name=Arborea Stone
+
+# Misc
+itemGroup.tiberianeclipse=Tiberian Eclipse

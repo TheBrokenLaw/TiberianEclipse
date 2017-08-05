@@ -15,6 +15,7 @@ public class BlockBase extends Block implements IModelProvider{
         this.name=name;
         setUnlocalizedName(name);
         setRegistryName(name);
+        setCreativeTab(Main.creativeTab);
     }
     @Override
     public void registerItemModel(Item item){

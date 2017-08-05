@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import tiberianeclipse.util.EclipseTab;
 
 @Mod(modid = Main.modId, name = Main.name, version = Main.version, acceptedMinecraftVersions = "[1.10.2]")
 public class Main {
@@ -21,8 +22,9 @@ public class Main {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        ModItems.init();
+
         ModBlocks.init();
+        ModItems.init();
     }
 
     @Mod.EventHandler
@@ -36,4 +38,5 @@ public class Main {
     }
     @SidedProxy(serverSide = "tiberianeclipse.CommonProxy", clientSide = "tiberianeclipse.ClientProxy")
     public static CommonProxy proxy;
+    public static final EclipseTab creativeTab=new EclipseTab();
 }
