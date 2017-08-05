@@ -3,8 +3,9 @@ package tiberianeclipse.item;
 import tiberianeclipse.Main;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import tiberianeclipse.util.IModelProvider;
 
-public class ItemBase extends Item {
+public class ItemBase extends Item implements IModelProvider{
 
     protected String name;
 
@@ -13,8 +14,9 @@ public class ItemBase extends Item {
         setUnlocalizedName(name);
         setRegistryName(name);
     }
-
-    public void registerItemModel() {Main.proxy.registerItemRenderer(this, 0, name);
+    @Override
+    public void registerItemModel(Item item) {
+        Main.proxy.registerItemRenderer(item, 0, name);
     }
 
     @Override

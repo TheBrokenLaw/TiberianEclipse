@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import tiberianeclipse.util.IModelProvider;
 
 public class ModBlocks {
     public static BlockOre oreTiberium;
@@ -14,8 +15,8 @@ public class ModBlocks {
     private static <T extends Block> T register(T block, ItemBlock itemBlock){
         GameRegistry.register(block);
         GameRegistry.register(itemBlock);
-        if (block instanceof BlockBase){
-            ((BlockBase)block).registerItemModel(itemBlock);
+        if (block instanceof IModelProvider){
+            ((IModelProvider)block).registerItemModel(itemBlock);
         }
         return block;
     }

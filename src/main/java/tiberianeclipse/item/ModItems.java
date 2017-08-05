@@ -2,6 +2,7 @@ package tiberianeclipse.item;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import tiberianeclipse.util.IModelProvider;
 
 public class ModItems {
     public static ItemBase greenShard;
@@ -13,8 +14,8 @@ public class ModItems {
     private static <T extends Item> T register(T item) {
         GameRegistry.register(item);
 
-        if (item instanceof ItemBase) {
-            ((ItemBase) item).registerItemModel();
+        if (item instanceof IModelProvider) {
+            ((IModelProvider) item).registerItemModel();
         }
 
         return item;
