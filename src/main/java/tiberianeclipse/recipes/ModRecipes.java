@@ -30,16 +30,16 @@ public class ModRecipes{
         GameRegistry.addSmelting(ModItems.viniferaShard, new ItemStack(ModItems.refinedTiberium, 2), 0.8f);
         GameRegistry.addSmelting(ModItems.cruentusShard, new ItemStack(ModItems.refinedTiberium, 4), 0.9f);
         GameRegistry.addSmelting(ModItems.arboreaShard, new ItemStack(ModItems.refinedTiberium, 8), 1.0f);
-        GameRegistry.addSmelting(ModItems.ripariusCluster, new ItemStack(ModItems.refinedTiberium, 8), 2.1f);
-        GameRegistry.addSmelting(ModItems.viniferaCluster, new ItemStack(ModItems.refinedTiberium, 16), 2.4f);
-        GameRegistry.addSmelting(ModItems.cruentusCluster, new ItemStack(ModItems.refinedTiberium, 32), 2.7f);
-        GameRegistry.addSmelting(ModItems.arboreaCluster, new ItemStack(ModItems.refinedTiberium, 64), 3.4f);
-        GameRegistry.addSmelting(ModItems.ripVinCluster, new ItemStack(ModItems.refinedTiberium, 12), 2.2f);
-        GameRegistry.addSmelting(ModItems.vinRipCluster, new ItemStack(ModItems.refinedTiberium, 14), 2.3f);
-        GameRegistry.addSmelting(ModItems.vinCruCluster, new ItemStack(ModItems.refinedTiberium,20), 2.5f);
-        GameRegistry.addSmelting(ModItems.cruVinCluster, new ItemStack(ModItems.refinedTiberium,26), 2.6f);
-        GameRegistry.addSmelting(ModItems.cruArborCluster, new ItemStack(ModItems.refinedTiberium, 40), 2.9f);
-        GameRegistry.addSmelting(ModItems.arborCruCluster, new ItemStack(ModItems.refinedTiberium, 52), 3.0f);
+        GameRegistry.addSmelting(ModItems.ripariusCluster, new ItemStack(ModItems.refinedTiberium, 4), 2.1f);
+        GameRegistry.addSmelting(ModItems.viniferaCluster, new ItemStack(ModItems.refinedTiberium, 8), 2.4f);
+        GameRegistry.addSmelting(ModItems.cruentusCluster, new ItemStack(ModItems.refinedTiberium, 16), 2.7f);
+        GameRegistry.addSmelting(ModItems.arboreaCluster, new ItemStack(ModItems.refinedTiberium, 24), 3.4f);
+        GameRegistry.addSmelting(ModItems.ripVinCluster, new ItemStack(ModItems.refinedTiberium, 5), 2.2f);
+        GameRegistry.addSmelting(ModItems.vinRipCluster, new ItemStack(ModItems.refinedTiberium, 7), 2.3f);
+        GameRegistry.addSmelting(ModItems.vinCruCluster, new ItemStack(ModItems.refinedTiberium,10), 2.5f);
+        GameRegistry.addSmelting(ModItems.cruVinCluster, new ItemStack(ModItems.refinedTiberium,14), 2.6f);
+        GameRegistry.addSmelting(ModItems.cruArborCluster, new ItemStack(ModItems.refinedTiberium, 18), 2.9f);
+        GameRegistry.addSmelting(ModItems.arborCruCluster, new ItemStack(ModItems.refinedTiberium, 22), 3.0f);
     }
 
 

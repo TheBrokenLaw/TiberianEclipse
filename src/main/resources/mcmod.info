@@ -1,6 +1,6 @@
 [
 {
-  "modid": "tiberianeclipse",
+  "modid": "TiberianEclipse",
   "name": "Tiberian Eclipse",
   "description": "Early proof of concept build.",
   "version": "${version}",
