@@ -11,9 +11,9 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 @Mod(modid = Main.modId, name = Main.name, version = Main.version, acceptedMinecraftVersions = "[1.10.2]")
 public class Main {
 
-    public static final String modId = "tutorial";
-    public static final String name = "Tutorial Mod";
-    public static final String version = "1.0.0";
+    public static final String modId = "tiberianeclipse";
+    public static final String name = "Tiberian Eclipse";
+    public static final String version = "0.0.01a";
 
     @Mod.Instance(modId)
     public static Main instance;
