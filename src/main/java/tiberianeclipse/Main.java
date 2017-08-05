@@ -1,6 +1,7 @@
 package tiberianeclipse;
 
 
+import tiberianeclipse.block.ModBlocks;
 import tiberianeclipse.item.ModItems;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -21,6 +22,7 @@ public class Main {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         ModItems.init();
+        ModBlocks.init();
     }
 
     @Mod.EventHandler
