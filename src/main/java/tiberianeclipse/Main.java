@@ -1,7 +1,7 @@
 package tiberianeclipse;
 
 
-import net.kane.tiberianeclipse.item.ModItems;
+import tiberianeclipse.item.ModItems;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -32,6 +32,6 @@ public class Main {
     public void postInit(FMLPostInitializationEvent event) {
 
     }
-    @SidedProxy(serverSide = "net.kane.tutorial.CommonProxy", clientSide = "net.kane.tutorial.ClientProxy")
+    @SidedProxy(serverSide = "tiberianeclipse.CommonProxy", clientSide = "tiberianeclipse.ClientProxy")
     public static CommonProxy proxy;
 }

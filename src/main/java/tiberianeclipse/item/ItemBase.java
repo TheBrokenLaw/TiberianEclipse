@@ -1,6 +1,6 @@
 package tiberianeclipse.item;
 
-import net.kane.tiberianeclipse.Main;
+import tiberianeclipse.Main;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
