@@ -2,7 +2,7 @@
   "forge_marker": 1,
   "defaults": {
     "textures": {
-      "all": "tutorial:blocks/oreTiberium"
+      "all": "tiberianeclipse:blocks/oreTiberium"
     }
   },
   "variants": {
