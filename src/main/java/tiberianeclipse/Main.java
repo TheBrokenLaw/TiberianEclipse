@@ -1,6 +1,10 @@
 package tiberianeclipse;
 
 
+import net.minecraftforge.common.config.Config;
+import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import tiberianeclipse.block.ModBlocks;
 import tiberianeclipse.item.ModItems;
 import net.minecraftforge.fml.common.Mod;
@@ -16,17 +20,23 @@ public class Main {
 
     public static final String modId = "TiberianEclipse";
     public static final String name = "Tiberian Eclipse";
-    public static final String version = "0.0.01a";
-
+    public static final String version = "1.10.2-0.01b";
     @Mod.Instance(modId)
     public static Main instance;
+    @SidedProxy(serverSide = "tiberianeclipse.CommonProxy", clientSide = "tiberianeclipse.ClientProxy")
+    public static CommonProxy proxy;
+    public static SimpleNetworkWrapper packetUtil = NetworkRegistry.INSTANCE.newSimpleChannel(modId);
+
+
+
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-
         ModBlocks.init();
         ModItems.init();
+
     }
+
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
@@ -38,7 +48,7 @@ public class Main {
     public void postInit(FMLPostInitializationEvent event) {
 
     }
-    @SidedProxy(serverSide = "tiberianeclipse.CommonProxy", clientSide = "tiberianeclipse.ClientProxy")
-    public static CommonProxy proxy;
+
     public static final EclipseTab creativeTab=new EclipseTab();
+
 }

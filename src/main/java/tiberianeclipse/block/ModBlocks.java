@@ -5,6 +5,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import tiberianeclipse.item.ModItems;
 import tiberianeclipse.util.IModelProvider;
 
 public class ModBlocks {
@@ -15,10 +16,10 @@ public class ModBlocks {
     public static BlockCropTiberium greenTibBush;
     public static BlockBase refinedTiberiumBlock;
     public static void init(){
-        rockRiparius = register(new BlockOre("rockRiparius"));
-        rockVinifera = register(new BlockOre("rockVinifera"));
-        rockCruentus = register(new BlockOre("rockCruentus"));
-        rockArborea = register(new BlockOre("rockArborea"));
+        rockRiparius = register(new BlockOre("rockRiparius", ModItems.ripariusShard, 1,4,6,0.5f));
+        rockVinifera = register(new BlockOre("rockVinifera", ModItems.viniferaShard, 2,4,6,0.35f));
+        rockCruentus = register(new BlockOre("rockCruentus", ModItems.cruentusShard,3,4,6, 0.25f));
+        rockArborea = register(new BlockOre("RockArborea", ModItems.arboreaShard,4,4,6,0.10f));
         greenTibBush = register(new BlockCropTiberium(), null);
         refinedTiberiumBlock = register(new BlockBase(Material.ROCK, "refinedTiberiumBlock"));
     }

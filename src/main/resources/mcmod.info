@@ -3,14 +3,15 @@
   "modid": "TiberianEclipse",
   "name": "Tiberian Eclipse",
   "description": "Early proof of concept build.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
+  "version": "0.01b",
+  "mcversion": "1.10.2",
   "url": "https://github.com/TheBrokenLaw/TiberianEclipse",
   "updateUrl": "",
   "authorList": ["Kane"],
   "credits": "The community what went and did the things",
-  "logoFile": "",
+  "logoFile": "src/main/resources/assets/tiberianeclipse/textures/nodFlag.png",
   "screenshots": [],
+  "requiredMods": [Forge],
   "dependencies": []
 }
-]
+
