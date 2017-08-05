@@ -13,7 +13,7 @@ item.vinCruCluster.name=Vinifera-Cruentus Cluster
 item.cruVinCluster.name=Cruentus-Vinifera Cluster
 item.cruArborCluster.name=Cruentus-Arborea Cluster
 item.arborCruCluster.name=Arborea-Cruentus Cluster
-
+item.refinedTiberium.name=Refined Tiberium
 # Blocks
 tile.rockRiparius.name=Riparius Stone
 tile.rockVinifera.name=Vinifera Stone

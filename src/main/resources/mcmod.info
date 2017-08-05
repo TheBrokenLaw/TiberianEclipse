@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "tiberianeclipse",
+  "name": "Tiberian Eclipse",
+  "description": "Early proof of concept build.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://github.com/TheBrokenLaw/TiberianEclipse",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Kane"],
+  "credits": "The community what went and did the things",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

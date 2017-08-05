@@ -18,6 +18,8 @@ public class ModItems {
     public static ItemBase cruVinCluster;
     public static ItemBase cruArborCluster;
     public static ItemBase arborCruCluster;
+
+    public static ItemBase refinedTiberium;
     public static void init() {
         ripariusShard = register(new ItemRipariusShard());
         viniferaShard = register(new ItemBase("viniferaShard"));
@@ -33,6 +35,7 @@ public class ModItems {
         cruVinCluster = register(new ItemBase("cruVinCluster"));
         cruArborCluster =register(new ItemBase("cruArborCluster"));
         arborCruCluster = register(new ItemBase("arborCruCluster"));
+        refinedTiberium = register(new ItemBase("refinedTiberium"));
 
     }
 

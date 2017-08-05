@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import tiberianeclipse.recipes.ModRecipes;
 import tiberianeclipse.util.EclipseTab;
 
 @Mod(modid = Main.modId, name = Main.name, version = Main.version, acceptedMinecraftVersions = "[1.10.2]")
@@ -29,6 +30,7 @@ public class Main {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+        ModRecipes.init();
 
     }
 
