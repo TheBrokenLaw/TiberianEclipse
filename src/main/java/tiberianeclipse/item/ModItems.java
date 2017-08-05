@@ -5,17 +5,19 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import tiberianeclipse.util.IModelProvider;
 
 public class ModItems {
-    public static ItemBase greenShard;
+    public static ItemGreenShard greenShard;
+
 
     public static void init() {
-        greenShard = register(new ItemBase("greenShard").setCreativeTab(CreativeTabs.MATERIALS));
+        greenShard = register(new ItemGreenShard());
+
     }
 
     private static <T extends Item> T register(T item) {
         GameRegistry.register(item);
 
         if (item instanceof IModelProvider) {
-            ((IModelProvider) item).registerItemModel();
+            ((IModelProvider) item).registerItemModel(item);
         }
 
         return item;

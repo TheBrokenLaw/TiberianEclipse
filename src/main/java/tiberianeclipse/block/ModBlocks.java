@@ -8,13 +8,16 @@ import tiberianeclipse.util.IModelProvider;
 
 public class ModBlocks {
     public static BlockOre oreTiberium;
+    public static BlockCropTiberium greenTibBush;
     public static void init(){
         oreTiberium = register(new BlockOre("oreTiberium").setCreativeTab(CreativeTabs.MATERIALS));
-
+        greenTibBush = register(new BlockCropTiberium(), null);
     }
     private static <T extends Block> T register(T block, ItemBlock itemBlock){
         GameRegistry.register(block);
-        GameRegistry.register(itemBlock);
+        if (itemBlock !=null) {
+            GameRegistry.register(itemBlock);
+        }
         if (block instanceof IModelProvider){
             ((IModelProvider)block).registerItemModel(itemBlock);
         }

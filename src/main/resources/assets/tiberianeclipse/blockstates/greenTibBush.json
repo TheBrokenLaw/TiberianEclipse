@@ -1,0 +1,41 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "cross"
+  },
+  "variants": {
+    "age": {
+      "0": {
+        "textures": {
+          "cross": "tiberianeclipse:blocks/greenTibBush/0"
+        }
+      },
+      "1": {
+        "textures": {
+          "cross": "tiberianeclipse:blocks/greenTibBush/1"
+        }
+      },
+      "2": {
+        "textures": {
+          "cross": "tiberianeclipse:blocks/greenTibBush/2"
+        }
+      },
+      "3": {
+        "textures": {
+          "cross": "tiberianeclipse:blocks/greenTibBush/3"
+        }
+      },
+      "4": {
+        "textures": {
+          "cross": "tiberianeclipse:blocks/greenTibBush/4"
+        }
+      },
+      "5": {
+        "textures": {
+          "cross": "tiberianeclipse:blocks/greenTibBush/5"
+        }
+      }
+
+    }
+  }
+}
