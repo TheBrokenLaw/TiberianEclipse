@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "tutorial:items/greenShard"
+		"layer0": "tiberianeclipse:items/greenShard"
 	}
 }
