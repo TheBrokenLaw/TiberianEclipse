@@ -1,4 +1,3 @@
-[
 {
   "modid": "TiberianEclipse",
   "name": "Tiberian Eclipse",
@@ -11,6 +10,6 @@
   "credits": "The community what went and did the things",
   "logoFile": "src/main/resources/logo/nodFlag.png",
   "screenshots": [],
-  "requiredMods": [Forge],
+  "requiredMods": ["Forge"],
   "dependencies": []
 }

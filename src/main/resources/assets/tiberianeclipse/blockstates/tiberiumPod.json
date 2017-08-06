@@ -1,0 +1,50 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "model": "tiberianeclipse:tiberiumPod",
+      "variants": {
+        "age": {
+          "0": {
+            "textures": {
+              "model": "tiberianeclipse:tiberiumPod"
+            }
+          },
+          "1": {
+            "textures": {
+              "model": "tiberianeclipse:tiberiumPod"
+            }
+          },
+          "2": {
+            "textures": {
+              "model": "tiberianeclipse:tiberiumPod"
+            }
+          },
+          "3": {
+            "textures": {
+              "model": "tiberianeclipse:tiberiumPod"
+            }
+          },
+          "4": {
+            "textures": {
+              "model": "tiberianeclipse:tiberiumPod"
+            }
+          },
+          "5": {
+            "textures": {
+              "model": "tiberianeclipse:tiberiumPod"
+            }
+          },
+          "6": {
+            "textures": {
+              "model": "tiberianeclipse:tiberiumPod"
+            }
+          },
+          "7": {
+            "textures": {
+              "model": "tiberianeclipse:tiberiumPod"
+            }
+          }
+        }
+      }
+}

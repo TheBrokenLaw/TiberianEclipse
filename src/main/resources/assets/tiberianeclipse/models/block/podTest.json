@@ -1,11 +1,11 @@
 {
 	"uv1Marker":true,
 	"credit": "Made with Blockbench, a free, modern block model editor by JannisX11",
-	"description": "Tiberium",
+	"description": "tiberianeclipse:block/podTest",
 	"textures": {
 		"0": "tiberianeclipse:items/tibSoil",
 		"1": "tiberianeclipse:items/ripariusShard",
-		"particle": "tiberianeclipseitems/tibSoil"
+		"particle": "tiberianeclipse:tibSoil"
 	},
 	"elements": [
 		{
