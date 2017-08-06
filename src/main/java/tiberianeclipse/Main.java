@@ -20,7 +20,7 @@ import tiberianeclipse.world.ModWorldGen;
 @Mod(modid = Main.modId, name = Main.name, version = Main.version, acceptedMinecraftVersions = "[1.10.2]")
 public class Main {
 
-    public static final String modId = "TiberianEclipse";
+    public static final String modId = "tiberianeclipse";
     public static final String name = "Tiberian Eclipse";
     public static final String version = "1.10.2-0.02b";
     @Mod.Instance(modId)

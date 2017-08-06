@@ -1,48 +1,48 @@
 {
   "forge_marker": 1,
   "defaults": {
-    "model": "cross"
+    "model": "crop"
   },
   "variants": {
     "age": {
       "0": {
         "textures": {
-          "cross": "tiberianeclipse:blocks/greenTibBush/0"
+          "crop": "tiberianeclipse:blocks/greenTibBush/0"
         }
       },
       "1": {
         "textures": {
-          "cross": "tiberianeclipse:blocks/greenTibBush/1"
+          "crop": "tiberianeclipse:blocks/greenTibBush/1"
         }
       },
       "2": {
         "textures": {
-          "cross": "tiberianeclipse:blocks/greenTibBush/2"
+          "crop": "tiberianeclipse:blocks/greenTibBush/2"
         }
       },
       "3": {
         "textures": {
-          "cross": "tiberianeclipse:blocks/greenTibBush/3"
+          "crop": "tiberianeclipse:blocks/greenTibBush/3"
         }
       },
       "4": {
         "textures": {
-          "cross": "tiberianeclipse:blocks/greenTibBush/4"
+          "crop": "tiberianeclipse:blocks/greenTibBush/4"
         }
       },
       "5": {
         "textures": {
-          "cross": "tiberianeclipse:blocks/greenTibBush/5"
+          "crop": "tiberianeclipse:blocks/greenTibBush/5"
         }
       },
       "6": {
         "textures": {
-          "cross": "tiberianeclipse:blocks/greenTibBush/6"
+          "crop": "tiberianeclipse:blocks/greenTibBush/6"
         }
       },
       "7": {
         "textures": {
-          "cross": "tiberianeclipse:blocks/greenTibBush/7"
+          "crop": "tiberianeclipse:blocks/greenTibBush/7"
         }
       }
     }

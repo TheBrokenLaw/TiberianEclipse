@@ -22,7 +22,7 @@ public class BlockOre extends BlockBase {
         this.mostQuantity = mostQuantity;
         setHardness(3f);
         setResistance(5f);
-        this.setLightLevel=setLightLevel;
+        this.setLightLevel(setLightLevel);
     }
 
     @Override

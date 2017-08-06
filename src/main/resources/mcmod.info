@@ -9,9 +9,8 @@
   "updateUrl": "",
   "authorList": ["Kane"],
   "credits": "The community what went and did the things",
-  "logoFile": "src/main/resources/assets/tiberianeclipse/textures/nodFlag.png",
+  "logoFile": "src/main/resources/logo/nodFlag.png",
   "screenshots": [],
   "requiredMods": [Forge],
   "dependencies": []
 }
-

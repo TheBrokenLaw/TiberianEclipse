@@ -3,7 +3,7 @@ import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import tiberianeclipse.util.IModelProvider;
 
-public class ModItems {
+public class ModItems{
     public static ItemRipariusShard ripariusShard;
     public static ItemBase viniferaShard;
     public static ItemBase cruentusShard;
