@@ -83,7 +83,15 @@ public class TiberiumGrowth extends BlockBase implements IGrowable {
 
         worldIn.setBlockState(pos, this.withAge(i), 2);
     }
+    public boolean isOpaqueCube(IBlockState state)
+    {
+        return false;
+    }
 
+    public boolean isFullCube(IBlockState state)
+    {
+        return false;
+    }
     protected int getBonemealAgeIncrease(World worldIn) {
         return MathHelper.getRandomIntegerInRange(worldIn.rand, 2, 5);
     }

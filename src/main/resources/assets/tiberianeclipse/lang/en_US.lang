@@ -14,6 +14,10 @@ item.cruVinCluster.name=Cruentus-Vinifera Cluster
 item.cruArborCluster.name=Cruentus-Arborea Cluster
 item.arborCruCluster.name=Arborea-Cruentus Cluster
 item.refinedTiberium.name=Refined Tiberium
+item.ripariusBlade.name=Green Tiberium Sword
+item.viniferaBlade.name=Blue Tiberium Sword
+item.cruentusBlade.name=Red Tiberium Sword
+item.arboreaBlade.name=??? Tiberium Sword
 # Blocks
 tile.rockRiparius.name=Riparius Stone
 tile.rockVinifera.name=Vinifera Stone

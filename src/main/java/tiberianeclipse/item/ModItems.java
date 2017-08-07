@@ -1,9 +1,12 @@
 package tiberianeclipse.item;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import tiberianeclipse.item.tools.BaseSword;
+import tiberianeclipse.item.tools.BaseTool;
 import tiberianeclipse.util.IModelProvider;
 
 public class ModItems{
+    // Tiberium Varieties
     public static ItemRipariusShard ripariusShard;
     public static ItemBase viniferaShard;
     public static ItemBase cruentusShard;
@@ -18,9 +21,16 @@ public class ModItems{
     public static ItemBase cruVinCluster;
     public static ItemBase cruArborCluster;
     public static ItemBase arborCruCluster;
+    //Tools
+        //Swords
+    public static BaseSword ripariusBlade;
+    public static BaseSword viniferaBlade;
+    public static BaseSword cruentusBlade;
+    public static BaseSword arboreaBlade;
 
     public static ItemBase refinedTiberium;
     public static void init() {
+        //Tiberium shards and clusters
         ripariusShard = register(new ItemRipariusShard());
         viniferaShard = register(new ItemBase("viniferaShard"));
         cruentusShard = register(new ItemBase("cruentusShard"));
@@ -36,6 +46,12 @@ public class ModItems{
         cruArborCluster =register(new ItemBase("cruArborCluster"));
         arborCruCluster = register(new ItemBase("arborCruCluster"));
         refinedTiberium = register(new ItemBase("refinedTiberium"));
+        //Tiberium Tools
+            //Swords
+        ripariusBlade = register(new BaseSword(BaseTool.riparius, "ripariusBlade"));
+        viniferaBlade = register(new BaseSword(BaseTool.vinifera, "viniferaBlade"));
+        cruentusBlade = register(new BaseSword(BaseTool.cruentus, "cruentusBlade"));
+        arboreaBlade = register(new BaseSword(BaseTool.arborea, "arboreaBlade"));
 
     }
 

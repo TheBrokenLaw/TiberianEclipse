@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " R ",
+    " R ",
+    " B "
+  ],
+  "key": {
+    "R": {
+      "item": "tiberianeclipse:arboreaCluster"
+    },
+    "B": {
+      "item": "tiberianeclipse:refinedTiberium"
+    }
+  },
+  "result": {
+    "item": "tiberianeclipse:arboreaBlade"
+  }
+}

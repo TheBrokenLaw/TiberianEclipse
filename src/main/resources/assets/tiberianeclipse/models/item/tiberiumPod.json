@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench, a free, modern block model editor by JannisX11",
 	"textures": {
 		"0": "tiberianeclipse:blocks/tibSoil",
-		"1": "tiberianeclipse:blocks/ripariusShard"
+		"1": "tiberianeclipse:blocks/tibCrystal"
 
 	},
 	"elements": [
