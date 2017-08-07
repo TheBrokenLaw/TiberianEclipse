@@ -22,7 +22,7 @@ public class Main {
 
     public static final String modId = "tiberianeclipse";
     public static final String name = "Tiberian Eclipse";
-    public static final String version = "1.10.2-0.02b";
+    public static final String version = "1.10.2-0.03a";
     @Mod.Instance(modId)
     public static Main instance;
     @SidedProxy(serverSide = "tiberianeclipse.CommonProxy", clientSide = "tiberianeclipse.ClientProxy")

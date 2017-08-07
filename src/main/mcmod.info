@@ -1,8 +1,9 @@
+[
 {
-  "modid": "TiberianEclipse",
+  "modid": "tiberianeclipse",
   "name": "Tiberian Eclipse",
   "description": "Early proof of concept build.",
-  "version": "0.02b",
+  "version": "0.03a",
   "mcversion": "1.10.2",
   "url": "https://github.com/TheBrokenLaw/TiberianEclipse",
   "updateUrl": "",
@@ -12,4 +13,5 @@
   "screenshots": [],
   "requiredMods": ["Forge"],
   "dependencies": []
+]
 }
