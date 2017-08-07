@@ -2,7 +2,9 @@ package tiberianeclipse.block;
 
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -34,10 +36,11 @@ public class TiberiumGrowth extends BlockBase implements IGrowable {
     public String name;
     public boolean whatthefuck;
     public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 7);
+
     public TiberiumGrowth(Material material, String name, int meta, Item seed, Item crop, int hardness, int resistance, float lightLevel, boolean whatthefuck) {
         super(material, name);
         setUnlocalizedName(name);
-        setRegistryName(name);
+
         this.seed = seed;
         this.crop = crop;
         this.meta = meta;
@@ -53,37 +56,52 @@ public class TiberiumGrowth extends BlockBase implements IGrowable {
         this.whatthefuck = whatthefuck;
         this.setTickRandomly(true);
     }
-    protected PropertyInteger getAgeProperty()
-    {
+
+    protected PropertyInteger getAgeProperty() {
         return AGE;
     }
-    public int getMaxAge() { return 7; }
-    public IBlockState withAge(int age) { return this.getDefaultState().withProperty(this.getAgeProperty(), Integer.valueOf(age)); }
-    protected int getAge(IBlockState state)
-    {
-        return ((Integer)state.getValue(this.getAgeProperty())).intValue();
+
+    public int getMaxAge() {
+        return 7;
     }
-    public void grow(World worldIn, BlockPos pos, IBlockState state)
-    {
+
+    public IBlockState withAge(int age) {
+        return this.getDefaultState().withProperty(this.getAgeProperty(), Integer.valueOf(age));
+    }
+
+    protected int getAge(IBlockState state) {
+        return ((Integer) state.getValue(this.getAgeProperty())).intValue();
+    }
+
+    public void grow(World worldIn, BlockPos pos, IBlockState state) {
         int i = this.getAge(state) + this.getBonemealAgeIncrease(worldIn);
         int j = this.getMaxAge();
 
-        if (i > j)
-        {
+        if (i > j) {
             i = j;
         }
 
         worldIn.setBlockState(pos, this.withAge(i), 2);
     }
 
-    protected int getBonemealAgeIncrease(World worldIn)
-    {
+    protected int getBonemealAgeIncrease(World worldIn) {
         return MathHelper.getRandomIntegerInRange(worldIn.rand, 2, 5);
     }
 
+    public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state) {
+    }
 
+    public IBlockState getStateFromMeta(int meta) {
+        return this.withAge(meta);
+    }
 
+    public int getMetaFromState(IBlockState state) {
+        return this.getAge(state);
+    }
 
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, new IProperty[]{AGE});
+    }
 
 
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
@@ -108,7 +126,7 @@ public class TiberiumGrowth extends BlockBase implements IGrowable {
             BlockPos blockpos1 = pos.add(rand.nextInt(3) - 1, rand.nextInt(2) - rand.nextInt(2), rand.nextInt(3) - 1);
 
             for (int k = 0; k < 4; ++k) {
-                if (worldIn.isAirBlock(blockpos1) ) {
+                if (worldIn.isAirBlock(blockpos1)) {
                     pos = blockpos1;
                 }
 
@@ -129,8 +147,7 @@ public class TiberiumGrowth extends BlockBase implements IGrowable {
                 || state.getBlock() == Blocks.DIRT
                 || state.getBlock() == Blocks.FARMLAND
                 || state.getBlock() == Blocks.SANDSTONE;
-}
-
+    }
 
 
     protected Item getSeed() {
@@ -142,7 +159,6 @@ public class TiberiumGrowth extends BlockBase implements IGrowable {
     }
 
 
-
     public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
         return true;
     }
@@ -151,11 +167,9 @@ public class TiberiumGrowth extends BlockBase implements IGrowable {
     public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
         return true;
     }
-
-    @Override
-    public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state) {
-
-    }
 }
+
+
+
 
 
