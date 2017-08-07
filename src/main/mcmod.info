@@ -8,7 +8,7 @@
   "updateUrl": "",
   "authorList": ["Kane"],
   "credits": "The community what went and did the things",
-  "logoFile": "src/main/resources/logo/nodFlag.png",
+  "logoFile": "assets/tiberianeclipse/logo/nodFlag.png",
   "screenshots": [],
   "requiredMods": ["Forge"],
   "dependencies": []

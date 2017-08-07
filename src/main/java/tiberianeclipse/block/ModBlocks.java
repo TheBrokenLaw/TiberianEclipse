@@ -21,7 +21,7 @@ public class ModBlocks extends ClientProxy {
     public static TiberiumGrowth greenTibBush;
     public static BlockBase refinedTiberiumBlock;
     public static TiberiumGrowth tiberiumPod;
-   // public static BlockBase podTest;
+    public static BlockBase podTest;
     public static void init(){
         rockRiparius = register(new BlockOre("rockRiparius", ModItems.ripariusShard, 1,4,6,0.5f));
         rockVinifera = register(new BlockOre("rockVinifera", ModItems.viniferaShard, 2,4,6,0.35f));
@@ -30,7 +30,7 @@ public class ModBlocks extends ClientProxy {
         greenTibBush = register(new TiberiumGrowth("greenTibBush", 0,ModItems.ripariusShard, ModItems.ripariusShard,3, 6, 0.25f, true));
         refinedTiberiumBlock = register(new BlockBase(Material.ROCK, "refinedTiberiumBlock"));
         tiberiumPod= register (new TiberiumGrowth("tiberiumPod",0,ModItems.ripariusShard, ModItems.ripariusShard, 3,6,.25f,true));
-       // podTest= register (new BlockBase(Material.GLASS, "podTest"));
+        podTest= register (new BlockBase(Material.GLASS, "podTest"));
     }
     private static <T extends Block> T register(T block, ItemBlock itemBlock){
         GameRegistry.register(block);

@@ -3,9 +3,9 @@
 	"credit": "Made with Blockbench, a free, modern block model editor by JannisX11",
 	"description": "Tiberium",
 	"textures": {
-		"0": "items/tibSoil",
-		"1": "items/ripariusShard",
-		"particle": "items/tibSoil"
+		"0": "tiberianeclipse:items/tibSoil",
+		"1": "tiberianeclipse:items/ripariusShard",
+		"particle": "tiberianeclipse:items/tibSoil"
 	},
 	"elements": [
 		{
