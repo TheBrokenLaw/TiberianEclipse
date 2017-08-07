@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.util.Random;
 
 
-public class TiberiumGrowth extends BlockBase implements IGrowable {
+public class TiberiumGrowth extends BlockCrops implements IGrowable {
     protected static final AxisAlignedBB TIB_AABB = new AxisAlignedBB(0.30000001192092896D, 0.0D, 0.30000001192092896D, 0.699999988079071D, 0.4000000059604645D, 0.699999988079071D);
     public int meta;
     public int hardness;
@@ -34,8 +34,7 @@ public class TiberiumGrowth extends BlockBase implements IGrowable {
     public String name;
     public boolean whatthefuck;
     public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 7);
-    public TiberiumGrowth(Material material, String name, int meta, Item seed, Item crop, int hardness, int resistance, float lightLevel, boolean whatthefuck) {
-        super(material, name);
+    public TiberiumGrowth(String name, int meta, Item seed, Item crop, int hardness, int resistance, float lightLevel, boolean whatthefuck) {
         setUnlocalizedName(name);
         setRegistryName(name);
         this.seed = seed;
@@ -108,20 +107,23 @@ public class TiberiumGrowth extends BlockBase implements IGrowable {
             BlockPos blockpos1 = pos.add(rand.nextInt(3) - 1, rand.nextInt(2) - rand.nextInt(2), rand.nextInt(3) - 1);
 
             for (int k = 0; k < 4; ++k) {
-                if (worldIn.isAirBlock(blockpos1) ) {
+                if (worldIn.isAirBlock(blockpos1) && this.canBlockStay(worldIn, blockpos1, this.getDefaultState())) {
                     pos = blockpos1;
                 }
 
                 blockpos1 = pos.add(rand.nextInt(3) - 1, rand.nextInt(2) - rand.nextInt(2), rand.nextInt(3) - 1);
             }
 
-            if ((worldIn.isAirBlock(blockpos1))) {
+            if ((worldIn.isAirBlock(blockpos1)) && this.canBlockStay(worldIn, blockpos1, this.getDefaultState())) {
                 worldIn.setBlockState(blockpos1, this.getDefaultState(), 2);
             }
         }
     }
-
-
+    @Override
+    public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state) {
+        IBlockState ground = worldIn.getBlockState(pos.down());
+        return ground.getBlock().canSustainPlant(ground, worldIn, pos.down(), net.minecraft.util.EnumFacing.UP, this);
+}
     protected boolean canSustainBush(IBlockState state) {
         return state.getBlock() == Blocks.SAND
                 || state.getBlock() == Blocks.GRASS
@@ -133,6 +135,7 @@ public class TiberiumGrowth extends BlockBase implements IGrowable {
 
 
 
+    @Override
     protected Item getSeed() {
         return seed;
     }
@@ -142,7 +145,7 @@ public class TiberiumGrowth extends BlockBase implements IGrowable {
     }
 
 
-
+    @Override
     public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
         return true;
     }

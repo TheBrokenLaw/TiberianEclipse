@@ -6,7 +6,7 @@
       "1": "tiberianeclipse:blocks/tibCrystal",
       "particle": "tiberianeclipse:blocks/tibSoil"
     },
-    "model": "tiberianeclipse:tibPod/tiberiumPod"
+    "model": "tiberianeclipse:spreadTest/spread0"
   },
   "variants": {
     "age": {
@@ -16,7 +16,7 @@
           "1": "tiberianeclipse:blocks/tibCrystal",
           "particle": "tiberianeclipse:blocks/tibSoil"
         },
-        "model": "tiberianeclipse:tibPod/tiberiumPod"
+        "model": "tiberianeclipse:spreadTest/spread0"
       },
       "1": {
         "textures": {
@@ -24,7 +24,7 @@
           "1": "tiberianeclipse:blocks/tibCrystal",
           "particle": "tiberianeclipse:blocks/tibSoil"
         },
-        "model": "tiberianeclipse:tibPod/tiberiumPod1"
+        "model": "tiberianeclipse:spreadTest/spread1"
       },
       "2": {
         "textures": {
@@ -32,7 +32,7 @@
           "1": "tiberianeclipse:blocks/tibCrystal",
           "particle": "tiberianeclipse:blocks/tibSoil"
         },
-        "model": "tiberianeclipse:tibPod/tiberiumPod2"
+        "model": "tiberianeclipse:spreadTest/spread2"
       },
       "3": {
         "textures": {
@@ -40,7 +40,7 @@
           "1": "tiberianeclipse:blocks/tibCrystal",
           "particle": "tiberianeclipse:blocks/tibSoil"
         },
-        "model": "tiberianeclipse:tibPod/tiberiumPod3"
+        "model": "tiberianeclipse:spreadTest/spread3"
       },
       "4": {
         "textures": {
@@ -48,7 +48,7 @@
           "1": "tiberianeclipse:blocks/tibCrystal",
           "particle": "tiberianeclipse:blocks/tibSoil"
         },
-        "model": "tiberianeclipse:tibPod/tiberiumPod4"
+        "model": "tiberianeclipse:spreadTest/spread4"
       },
       "5": {
         "textures": {
@@ -56,7 +56,7 @@
           "1": "tiberianeclipse:blocks/tibCrystal",
           "particle": "tiberianeclipse:blocks/tibSoil"
         },
-        "model": "tiberianeclipse:tibPod/tiberiumPod5"
+        "model": "tiberianeclipse:spreadTest/spread5"
       },
       "6": {
         "textures": {
@@ -64,7 +64,7 @@
           "1": "tiberianeclipse:blocks/tibCrystal",
           "particle": "tiberianeclipse:blocks/tibSoil"
         },
-        "model": "tiberianeclipse:tibPod/tiberiumPod6"
+        "model": "tiberianeclipse:spreadTest/spread6"
       },
       "7": {
         "textures": {
@@ -72,12 +72,11 @@
           "1": "tiberianeclipse:blocks/tibCrystal",
           "particle": "tiberianeclipse:blocks/tibSoil"
         },
-        "model": "tiberianeclipse:tibPod/tiberiumPod7"
+        "model": "tiberianeclipse:spreadTest/spread7"
       }
-      },
-
+      }
+    },
 "inventory": {
-  "model": "tiberianeclipse:tibPod/tiberiumPod"
-}
+"model": "tiberianeclipse:spreadTest/spread0"
 }
 }

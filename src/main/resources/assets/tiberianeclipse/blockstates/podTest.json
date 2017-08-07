@@ -2,9 +2,9 @@
   "forge_marker": 1,
   "defaults": {
     "textures": {
-      "0": "tiberianeclipse:tibSoil",
-      "1": "tiberianeclipse:ripariusShard",
-      "particle": "tiberianeclipse:tibSoil"
+      "0": "tiberianeclipse:blocks/tibSoil",
+      "1": "tiberianeclipse:blocks/ripariusShard"
+
     },
     "model": "tiberianeclipse:podTest"
   },

@@ -22,7 +22,9 @@ public class ModBlocks extends ClientProxy {
     public static BlockBase refinedTiberiumBlock;
     public static TiberiumGrowth tiberiumPod;
     public static BlockBase podTest;
+    public static SpreadTest spread;
     public static void init(){
+        spread= register (new SpreadTest(Material.GLASS, "spread"));
         rockRiparius = register(new BlockOre("rockRiparius", ModItems.ripariusShard, 1,4,6,0.5f));
         rockVinifera = register(new BlockOre("rockVinifera", ModItems.viniferaShard, 2,4,6,0.35f));
         rockCruentus = register(new BlockOre("rockCruentus", ModItems.cruentusShard,3,4,6, 0.25f));
