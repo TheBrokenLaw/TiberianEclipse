@@ -200,13 +200,7 @@ public class TiberiumGrowth extends BlockBase implements IGrowable {
         return this.canSustainBush(worldIn.getBlockState(pos.down()));
     }
     protected boolean canSustainBush(IBlockState state) {
-        return state.getBlock() == Blocks.SAND
-                || state.getBlock() == Blocks.GRASS
-                || state.getBlock() == Blocks.STONE
-                || state.getBlock() == Blocks.DIRT
-                || state.getBlock() == Blocks.FARMLAND
-                || state.getBlock()==ModBlocks.tiberiumGround
-                || state.getBlock() == Blocks.SANDSTONE;
+        return state.getBlock()==ModBlocks.tiberiumGround;
     }
 
 

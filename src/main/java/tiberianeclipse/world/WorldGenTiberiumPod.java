@@ -7,6 +7,7 @@ import net.minecraft.block.BlockTallGrass;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -19,7 +20,13 @@ import static net.minecraft.block.material.Material.PLANTS;
 
 public class WorldGenTiberiumPod extends WorldGenerator {
     private final IBlockState tiberiumPodState;
-
+    protected void setBlockAndAge(Random random, World world, BlockPos pos, IBlockState stateNew)
+    {
+        if (!world.getBlockState(pos).isOpaqueCube())
+        {
+            world.setBlockState(pos, stateNew, 2);
+        }
+    }
 
     {
         this.tiberiumPodState = ModBlocks.tiberiumPod.getDefaultState();
@@ -40,13 +47,17 @@ public class WorldGenTiberiumPod extends WorldGenerator {
 
             if (worldIn.isAirBlock(blockpos) && ModBlocks.tiberiumPod.canBlockStay(worldIn, blockpos, this.tiberiumPodState))
             {
-                worldIn.setBlockState(blockpos, this.tiberiumPodState);
+                this.setBlockAndAge(rand, worldIn, blockpos, this.tiberiumPodState.withProperty(ModBlocks.tiberiumPod.AGE, this.randomAge(rand)));
             }
         }
 
         return true;
     }
 
+    int randomAge(Random random)
+    {
+        return random.nextInt(7);
+    }
    // public boolean generate(World worldIn, Random rand, BlockPos pos)
    // {
 

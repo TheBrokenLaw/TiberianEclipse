@@ -26,13 +26,12 @@ public class BiomeRipariusField extends Biome {
     public BiomeRipariusField() {
         super(properties);
         this.theBiomeDecorator.treesPerChunk = -100;
-        this.theBiomeDecorator.flowersPerChunk = 12;
-        this.theBiomeDecorator.grassPerChunk = 12;
+        this.theBiomeDecorator.grassPerChunk = 64;
         this.topBlock = ModBlocks.tiberiumGround.getDefaultState();
         this.spawnableMonsterList.clear();
         this.spawnableCreatureList.clear();
         this.spawnableWaterCreatureList.clear();
-        this.tiberiumPodPerChunk=12;
+        this.tiberiumPodPerChunk=64;
         this.fillerBlock=STONE;
 
     }
@@ -42,8 +41,30 @@ public class BiomeRipariusField extends Biome {
         if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.GRASS))
         {
 
-            int i = rand.nextInt(16) + 8;
-            int j = rand.nextInt(16) + 8;
+            int i = rand.nextInt(32) + 8;
+            int j = rand.nextInt(32) + 8;
+            int height = worldIn.getHeight(pos.add(i, 0, j)).getY() * 2;
+            if (height < 1) height = 1;
+            int k = rand.nextInt(height);
+
+            tiberiumPod.generate(worldIn, rand, pos.add(i, k, j));
+        }
+       else if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.FLOWERS))
+        {
+
+            int i = rand.nextInt(32) + 8;
+            int j = rand.nextInt(32) + 8;
+            int height = worldIn.getHeight(pos.add(i, 0, j)).getY() * 2;
+            if (height < 1) height = 1;
+            int k = rand.nextInt(height);
+
+            tiberiumPod.generate(worldIn, rand, pos.add(i, k, j));
+        }
+        else if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.TREE))
+        {
+
+            int i = rand.nextInt(32) + 8;
+            int j = rand.nextInt(32) + 8;
             int height = worldIn.getHeight(pos.add(i, 0, j)).getY() * 2;
             if (height < 1) height = 1;
             int k = rand.nextInt(height);
