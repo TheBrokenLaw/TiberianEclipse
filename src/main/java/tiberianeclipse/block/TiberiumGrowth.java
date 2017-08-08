@@ -17,6 +17,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.model.IModel;
 import net.minecraftforge.client.model.ModelLoaderRegistry;
 import net.minecraftforge.client.model.b3d.B3DLoader;
+import net.minecraftforge.common.EnumPlantType;
+import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.property.IExtendedBlockState;
 import tiberianeclipse.Main;
 import tiberianeclipse.util.IModelProvider;
@@ -115,17 +117,21 @@ public class TiberiumGrowth extends BlockBase implements IGrowable {
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
         return TIB_AABB;
     }
-
-    public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-        if (rand.nextInt(10) == 0) {
+    public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
+    {
+        if (rand.nextInt(5) == 0)
+        {
             int i = 5;
             int j = 4;
 
-            for (BlockPos blockpos : BlockPos.getAllInBoxMutable(pos.add(-4, -1, -4), pos.add(4, 1, 4))) {
-                if (worldIn.getBlockState(blockpos).getBlock() == this) {
+            for (BlockPos blockpos : BlockPos.getAllInBoxMutable(pos.add(-4, -1, -4), pos.add(4, 1, 4)))
+            {
+                if (worldIn.getBlockState(blockpos).getBlock() == this)
+                {
                     --i;
 
-                    if (i <= 0) {
+                    if (i <= 0)
+                    {
                         return;
                     }
                 }
@@ -133,19 +139,76 @@ public class TiberiumGrowth extends BlockBase implements IGrowable {
 
             BlockPos blockpos1 = pos.add(rand.nextInt(3) - 1, rand.nextInt(2) - rand.nextInt(2), rand.nextInt(3) - 1);
 
-            for (int k = 0; k < 4; ++k) {
-                if (worldIn.isAirBlock(blockpos1)) {
+            for (int k = 0; k < 4; ++k)
+            {
+                if (worldIn.isAirBlock(blockpos1) && this.canBlockStay(worldIn, blockpos1, this.getDefaultState()))
+                {
                     pos = blockpos1;
                 }
 
                 blockpos1 = pos.add(rand.nextInt(3) - 1, rand.nextInt(2) - rand.nextInt(2), rand.nextInt(3) - 1);
             }
 
-            if ((worldIn.isAirBlock(blockpos1))) {
+            if (worldIn.isAirBlock(blockpos1) && this.canBlockStay(worldIn, blockpos1, this.getDefaultState()))
+            {
                 worldIn.setBlockState(blockpos1, this.getDefaultState(), 2);
             }
         }
     }
+
+    public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
+    {
+        return super.canPlaceBlockAt(worldIn, pos) && this.canBlockStay(worldIn, pos, this.getDefaultState());
+    }
+
+    /**
+     * Return true if the block can sustain a Bush
+     */
+
+
+    public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state)
+    {
+        if (pos.getY() >= 0 && pos.getY() < 256)
+        {
+            IBlockState iblockstate = worldIn.getBlockState(pos.down());
+            return iblockstate.getBlock() == ModBlocks.tiberiumGround ? true :
+                    (iblockstate.getBlock() == Blocks.DIRT && iblockstate.getValue(BlockDirt.VARIANT) == BlockDirt.DirtType.PODZOL);
+        }
+        else
+        {
+            return false;
+        }
+    }
+   // public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+   //        if (rand.nextInt(5) == 0) {
+   //          int i = 5;
+   //             int j = 4;
+
+   //         for (BlockPos blockpos : BlockPos.getAllInBoxMutable(pos.add(-4, -1, -4), pos.add(4, 1, 4))) {
+   //             if (worldIn.getBlockState(blockpos).getBlock() == this) {
+   //                 --i;
+
+   //                 if (i <= 0) {
+   //                     return;
+    //                }
+   //             }
+   //         }
+   //         BlockPos blockpos2=pos.add(rand.nextInt(3)-1,rand.nextInt(2)-1,rand.nextInt(3)-1);
+   //         BlockPos blockpos1 = pos.add(rand.nextInt(3) - 1, rand.nextInt(2) - rand.nextInt(2), rand.nextInt(3) - 1);
+
+   //         for (int k = 0; k < 16; ++k) {
+   //             if (worldIn.isAirBlock(blockpos1)&&worldIn.getBlockState(blockpos2)==ModBlocks.tiberiumGround.getDefaultState()) {
+   //                 pos = blockpos1;
+   //             }
+
+   //             blockpos1 = pos.add(rand.nextInt(3) - 1, rand.nextInt(2) - rand.nextInt(2), rand.nextInt(3) - 1);
+   //         }
+
+   //         if ((worldIn.isAirBlock(blockpos1))) {
+   //             worldIn.setBlockState(blockpos1, this.getDefaultState(), 2);
+    //        }
+    //    }
+   // }
 
 
     protected boolean canSustainBush(IBlockState state) {
@@ -154,6 +217,7 @@ public class TiberiumGrowth extends BlockBase implements IGrowable {
                 || state.getBlock() == Blocks.STONE
                 || state.getBlock() == Blocks.DIRT
                 || state.getBlock() == Blocks.FARMLAND
+                || state.getBlock()==ModBlocks.tiberiumGround
                 || state.getBlock() == Blocks.SANDSTONE;
     }
 
@@ -175,7 +239,10 @@ public class TiberiumGrowth extends BlockBase implements IGrowable {
     public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
         return true;
     }
-}
+
+
+    }
+
 
 
 

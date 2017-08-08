@@ -16,6 +16,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import tiberianeclipse.recipes.ModRecipes;
 import tiberianeclipse.util.EclipseTab;
 import tiberianeclipse.world.ModWorldGen;
+import tiberianeclipse.world.biomes.ModBiome;
 
 @Mod(modid = Main.modId, name = Main.name, version = Main.version, acceptedMinecraftVersions = "[1.10.2]")
 public class Main {
@@ -37,6 +38,7 @@ public class Main {
         ModBlocks.init();
         ModItems.init();
         GameRegistry.registerWorldGenerator(new ModWorldGen(), 3);
+        ModBiome.registerBiomes();
     }
 
     @Mod.EventHandler
