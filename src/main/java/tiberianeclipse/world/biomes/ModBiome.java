@@ -18,7 +18,7 @@ public class ModBiome extends ClientProxy{
 
 
    public static void registerBiomes(){
-       register(ripariusField, BiomeManager.BiomeType.WARM, "ripariusField",20, BiomeDictionary.Type.SPOOKY, BiomeDictionary.Type.FOREST);
+       register(ripariusField, BiomeManager.BiomeType.WARM, "ripariusField",10, BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.FOREST);
 
 
 
