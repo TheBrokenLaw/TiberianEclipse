@@ -10,27 +10,23 @@ import java.util.Random;
 
 public class BlockOre extends BlockBase {
     public Item drop;
+    public float hardness;
+    public float resistance;
     public int meta;
     public int leastQuantity;
     public int mostQuantity;
     public float setLightLevel;
-    public BlockOre(String name, Item drop, int meta, int leastQuantity, int mostQuantity, float setLightLevel) {
-        super(Material.ROCK, name);
+    public BlockOre(String name, Item drop, int meta, int leastQuantity, int mostQuantity, float hardness, float resistance, float setLightLevel) {
+        super(Material.ROCK, name, resistance, hardness);
         this.drop = drop;
         this.meta = meta;
+        this.setHarvestLevel("pickaxe",2);
         this.leastQuantity = leastQuantity;
         this.mostQuantity = mostQuantity;
-        setHardness(3f);
-        setResistance(5f);
+        this.setHardness(hardness);
+        this.setResistance(resistance);
         this.setLightLevel(setLightLevel);
     }
-
-    @Override
-    public BlockOre setCreativeTab(CreativeTabs tab) {
-        super.setCreativeTab(tab);
-        return this;
-    }
-
     @Override
     public Item getItemDropped(IBlockState blockstate, Random random, int fortune) {
         return this.drop;
@@ -46,6 +42,5 @@ public class BlockOre extends BlockBase {
         if (this.leastQuantity >= this.mostQuantity)
             return this.leastQuantity;
         return this.leastQuantity + random.nextInt(this.mostQuantity - this.leastQuantity + fortune + 1);
-
     }
 }

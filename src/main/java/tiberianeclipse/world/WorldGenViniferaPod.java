@@ -1,25 +1,15 @@
 package tiberianeclipse.world;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockBush;
-import net.minecraft.block.BlockFlower;
-import net.minecraft.block.BlockTallGrass;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import tiberianeclipse.api.MaterialIs;
 import tiberianeclipse.block.ModBlocks;
 
 import java.util.Random;
 
-import static net.minecraft.block.material.Material.PLANTS;
-
-public class WorldGenTiberiumPod extends WorldGenerator {
-    private final IBlockState tiberiumPodState;
+public class WorldGenViniferaPod extends WorldGenerator {
+    private final IBlockState viniferaPodState;
     protected void setBlockAndAge(Random random, World world, BlockPos pos, IBlockState stateNew)
     {
         if (!world.getBlockState(pos).isOpaqueCube())
@@ -29,7 +19,7 @@ public class WorldGenTiberiumPod extends WorldGenerator {
     }
 
     {
-        this.tiberiumPodState = ModBlocks.tiberiumPod.getDefaultState();
+        this.viniferaPodState = ModBlocks.viniferaPod.getDefaultState();
     }
 
     public boolean generate(World worldIn, Random rand, BlockPos position)
@@ -45,9 +35,9 @@ public class WorldGenTiberiumPod extends WorldGenerator {
         {
             BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 
-            if (worldIn.isAirBlock(blockpos) && ModBlocks.tiberiumPod.canBlockStay(worldIn, blockpos, this.tiberiumPodState))
+            if (worldIn.isAirBlock(blockpos) && ModBlocks.viniferaPod.canBlockStay(worldIn, blockpos, this.viniferaPodState))
             {
-                this.setBlockAndAge(rand, worldIn, blockpos, this.tiberiumPodState.withProperty(ModBlocks.tiberiumPod.AGE, this.randomAge(rand)));
+                this.setBlockAndAge(rand, worldIn, blockpos, this.viniferaPodState.withProperty(ModBlocks.viniferaPod.AGE, this.randomAge(rand)));
             }
         }
 
@@ -63,7 +53,7 @@ public class WorldGenTiberiumPod extends WorldGenerator {
 
 // we randomly pick between a bush with a cookie and a bush without a cookie
 
-   //     Block block = ModBlocks.tiberiumPod;
+   //     Block block = ModBlocks.viniferaPod;
    //     int y = 1 + getGroundFromAbove(worldIn, pos.getX(), pos.getZ());
         // debug:
         // System.out.println("Y-value of ground is " + y + " at (" + pos.getX() + ", " + pos.getZ() + ")");
@@ -75,11 +65,11 @@ public class WorldGenTiberiumPod extends WorldGenerator {
      //       Block toReplace = worldIn.getBlockState(bushPos).getBlock();
             // only place bush if it is air or plant
      //       if(toReplace == Blocks.AIR )//<--
-                    //|| toReplace == ModBlocks.tiberiumPod||toReplace==Blocks.GRASS || toReplace== Blocks.RED_FLOWER||toReplace==Blocks.YELLOW_FLOWER)<--
+                    //|| toReplace == ModBlocks.viniferaPod||toReplace==Blocks.GRASS || toReplace== Blocks.RED_FLOWER||toReplace==Blocks.YELLOW_FLOWER)<--
       //      {
                 // set the block to a bush
                 // use 2 as the flag to prevent update -- you don't have to include that parameter
-      //          worldIn.setBlockState(bushPos, ModBlocks.tiberiumPod.getDefaultState());
+      //          worldIn.setBlockState(bushPos, ModBlocks.viniferaPod.getDefaultState());
                 // debug:
                 // System.out.println("placed a cookie bush!");
       //      }   // else System.out.println("Sadly, this block is occupied by " + toReplace.getUnlocalizedName());

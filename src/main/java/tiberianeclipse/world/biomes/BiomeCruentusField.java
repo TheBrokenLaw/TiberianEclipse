@@ -2,25 +2,25 @@ package tiberianeclipse.world.biomes;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
-
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
+import net.minecraftforge.event.terraingen.TerrainGen;
 import tiberianeclipse.block.ModBlocks;
-import tiberianeclipse.world.WorldGenRipariusPod;
+import tiberianeclipse.world.WorldGenCruentusPod;
 
 import java.util.Random;
 
-public class BiomeRipariusField extends Biome {
-    public static WorldGenerator ripariusPod =new WorldGenRipariusPod();
-    protected int ripariusPodPerChunk;
-    public static BiomeProperties properties=new BiomeProperties("Riparius Field");
+public class BiomeCruentusField extends Biome {
+    public static WorldGenerator cruentusPod =new WorldGenCruentusPod();
+    protected int cruentusPodPerChunk;
+    public static BiomeProperties properties=new BiomeProperties("Cruentus Field");
    public BlockPos chunkPos;
 
 
-    public BiomeRipariusField() {
+    public BiomeCruentusField() {
         super(properties);
         this.theBiomeDecorator.treesPerChunk = -100;
         this.theBiomeDecorator.grassPerChunk = 64;
@@ -28,14 +28,14 @@ public class BiomeRipariusField extends Biome {
         this.spawnableMonsterList.clear();
         this.spawnableCreatureList.clear();
         this.spawnableWaterCreatureList.clear();
-        this.ripariusPodPerChunk=64;
+        this.cruentusPodPerChunk=64;
         this.fillerBlock=STONE;
 
     }
 
     @Override
     public void decorate(World worldIn, Random rand, BlockPos pos) {
-        if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.GRASS))
+        if(TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.GRASS))
         {
 
             int i = rand.nextInt(32) + 8;
@@ -44,9 +44,9 @@ public class BiomeRipariusField extends Biome {
             if (height < 1) height = 1;
             int k = rand.nextInt(height);
 
-            ripariusPod.generate(worldIn, rand, pos.add(i, k, j));
+            cruentusPod.generate(worldIn, rand, pos.add(i, k, j));
         }
-       else if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.FLOWERS))
+       else if(TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.FLOWERS))
         {
 
             int i = rand.nextInt(32) + 8;
@@ -55,9 +55,9 @@ public class BiomeRipariusField extends Biome {
             if (height < 1) height = 1;
             int k = rand.nextInt(height);
 
-            ripariusPod.generate(worldIn, rand, pos.add(i, k, j));
+            cruentusPod.generate(worldIn, rand, pos.add(i, k, j));
         }
-        else if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.TREE))
+        else if(TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.TREE))
         {
 
             int i = rand.nextInt(32) + 8;
@@ -66,7 +66,7 @@ public class BiomeRipariusField extends Biome {
             if (height < 1) height = 1;
             int k = rand.nextInt(height);
 
-            ripariusPod.generate(worldIn, rand, pos.add(i, k, j));
+            cruentusPod.generate(worldIn, rand, pos.add(i, k, j));
         }
     }
     public void genTerrainBlocks(World world, Random rand, ChunkPrimer chunkPrimer, int x, int z, double noiseVal){

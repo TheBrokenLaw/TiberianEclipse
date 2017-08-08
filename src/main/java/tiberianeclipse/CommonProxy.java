@@ -21,8 +21,9 @@ public class CommonProxy {
     public void preInit(FMLPreInitializationEvent event){
         File directory = event.getModConfigurationDirectory();
         config =new Configuration(new File(directory.getPath(),"TiberianEclipse.cfg"));
-        ModBlocks.init();
         ModItems.init();
+        ModBlocks.init();
+
         ModRecipes.init();
         ModEntities.init();
         ModBiome.registerBiomes();

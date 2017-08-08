@@ -15,7 +15,6 @@ import tiberianeclipse.world.fromthesky.*;
 import java.util.Collection;
 import java.util.HashSet;
 
-import static tiberianeclipse.block.ModBlocks.rockRiparius;
 //Heavily inspired by the AE2 meteorite code
 //Read: Still learning to build my own code for this so I'm adapting his.
 //All credit for this goes to the authors behind AE2

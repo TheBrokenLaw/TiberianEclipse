@@ -29,24 +29,28 @@ import java.io.IOException;
 import java.util.Random;
 
 
-public class TiberiumGrowth extends BlockBase implements IGrowable {
+public class TiberiumGrowth extends BlockOre implements IGrowable {
     protected static final AxisAlignedBB TIB_AABB = new AxisAlignedBB(0.30000001192092896D, 0.0D, 0.30000001192092896D, 0.699999988079071D, 0.2D, 0.699999988079071D);
     public int meta;
-    public int hardness;
-    public int resistance;
+    public float hardness;
+    public float resistance;
     public float lightLevel;
-    public Item seed;
-    public Item crop;
+    public Item drop;
+    public int leastQuantity;
+    public int mostQuantity;
     public String name;
+    public Material material;
     public boolean whatthefuck;
     public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 7);
     public BlockPos pos;
-    public TiberiumGrowth(Material material, String name, int meta, Item seed, Item crop, int hardness, int resistance, float lightLevel, boolean whatthefuck) {
-        super(material, name);
+    public TiberiumGrowth(String name,Material material, Item drop, int meta, int leastQuantity, int mostQuantity, float hardness, float resistance, float lightLevel, boolean whatthefuck) {
+        super(name, drop, meta, leastQuantity, mostQuantity, lightLevel, hardness, resistance);
         setUnlocalizedName(name);
-
-        this.seed = seed;
-        this.crop = crop;
+        this.material=material;
+        this.setHarvestLevel("pickaxe",2);
+        this.drop = drop;
+        this.leastQuantity = leastQuantity;
+        this.mostQuantity=mostQuantity;
         this.meta = meta;
         this.hardness = hardness;
         this.resistance = resistance;
@@ -204,22 +208,11 @@ public class TiberiumGrowth extends BlockBase implements IGrowable {
     }
 
 
-    protected Item getSeed() {
-        return seed;
-    }
-
-    protected Item getCrop() {
-        return crop;
-    }
     public boolean isMaxAge(IBlockState state)
     {
         return ((Integer)state.getValue(this.getAgeProperty())).intValue() >= this.getMaxAge();
     }
-    @Nullable
-    public Item getItemDropped(IBlockState state, Random rand, int fortune)
-    {
-        return this.isMaxAge(state) ? this.getCrop() : this.getSeed();
-    }
+
     public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
     {
         return !this.isMaxAge(state);
@@ -228,29 +221,26 @@ public class TiberiumGrowth extends BlockBase implements IGrowable {
     public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
         return true;
     }
+
+
     @Override
-    public java.util.List<ItemStack> getDrops(net.minecraft.world.IBlockAccess world, BlockPos pos, IBlockState state, int fortune)
-    {
-        java.util.List<ItemStack> ret = super.getDrops(world, pos, state, fortune);
-        int age = getAge(state);
-        Random rand = world instanceof World ? ((World)world).rand : new Random();
-
-        if (age >= getMaxAge())
-        {
-            int k = 3 + fortune;
-
-            for (int i = 0; i < 3 + fortune; ++i)
-            {
-                if (rand.nextInt(2 * getMaxAge()) <= age)
-                {
-                    ret.add(new ItemStack(this.getSeed(), 1, 0));
-                }
-            }
-        }
-        return ret;
+    public Item getItemDropped(IBlockState blockstate, Random random, int fortune) {
+        return this.drop;
     }
 
+    @Override
+    public int damageDropped(IBlockState blockstate) {
+        return this.meta;
     }
+
+    @Override
+    public int quantityDropped(IBlockState blockstate, int fortune, Random random) {
+        if (this.leastQuantity >= this.mostQuantity)
+            return this.leastQuantity;
+        return this.leastQuantity + random.nextInt(this.mostQuantity - this.leastQuantity + fortune + 1);
+    }
+}
+
 
 
 

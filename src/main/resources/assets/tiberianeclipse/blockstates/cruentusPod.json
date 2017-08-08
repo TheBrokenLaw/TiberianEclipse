@@ -1,0 +1,82 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "0": "tiberianeclipse:blocks/tibSoil",
+      "1": "tiberianeclipse:blocks/tibRedCrystal",
+      "particle": "tiberianeclipse:blocks/tibSoil"
+    },
+    "model": "tiberianeclipse:tibRedPod/tiberiumPod"
+  },
+  "variants": {
+    "age": {
+      "0": {
+        "textures": {
+          "0": "tiberianeclipse:blocks/tibSoil",
+          "1": "tiberianeclipse:blocks/tibRedCrystal",
+          "particle": "tiberianeclipse:blocks/tibSoil"
+        },
+        "model": "tiberianeclipse:tibRedPod/tiberiumPod"
+      },
+      "1": {
+        "textures": {
+          "0": "tiberianeclipse:blocks/tibSoil",
+          "1": "tiberianeclipse:blocks/tibRedCrystal",
+          "particle": "tiberianeclipse:blocks/tibSoil"
+        },
+        "model": "tiberianeclipse:tibRedPod/tiberiumPod1"
+      },
+      "2": {
+        "textures": {
+          "0": "tiberianeclipse:blocks/tibSoil",
+          "1": "tiberianeclipse:blocks/tibRedCrystal",
+          "particle": "tiberianeclipse:blocks/tibSoil"
+        },
+        "model": "tiberianeclipse:tibRedPod/tiberiumPod2"
+      },
+      "3": {
+        "textures": {
+          "0": "tiberianeclipse:blocks/tibSoil",
+          "1": "tiberianeclipse:blocks/tibRedCrystal",
+          "particle": "tiberianeclipse:blocks/tibSoil"
+        },
+        "model": "tiberianeclipse:tibRedPod/tiberiumPod3"
+      },
+      "4": {
+        "textures": {
+          "0": "tiberianeclipse:blocks/tibSoil",
+          "1": "tiberianeclipse:blocks/tibRedCrystal",
+          "particle": "tiberianeclipse:blocks/tibSoil"
+        },
+        "model": "tiberianeclipse:tibRedPod/tiberiumPod4"
+      },
+      "5": {
+        "textures": {
+          "0": "tiberianeclipse:blocks/tibSoil",
+          "1": "tiberianeclipse:blocks/tibRedCrystal",
+          "particle": "tiberianeclipse:blocks/tibSoil"
+        },
+        "model": "tiberianeclipse:tibRedPod/tiberiumPod5"
+      },
+      "6": {
+        "textures": {
+          "0": "tiberianeclipse:blocks/tibSoil",
+          "1": "tiberianeclipse:blocks/tibRedCrystal",
+          "particle": "tiberianeclipse:blocks/tibSoil"
+        },
+        "model": "tiberianeclipse:tibRedPod/tiberiumPod6"
+      },
+      "7": {
+        "textures": {
+          "0": "tiberianeclipse:blocks/tibSoil",
+          "1": "tiberianeclipse:blocks/tibRedCrystal",
+          "particle": "tiberianeclipse:blocks/tibSoil"
+        },
+        "model": "tiberianeclipse:tibRedPod/tiberiumPod7"
+      }
+      }
+    },
+"inventory": {
+"model": "tiberianeclipse:tiberiumPod"
+}
+}
