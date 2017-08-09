@@ -16,7 +16,7 @@ public class BaseSword extends ItemSword implements IModelProvider{
         this.name=name;
     }
 
-    public void registerItemModel(Item item){
+    public void registerItemModel(Item item, int meta){
         Main.proxy.registerItemRenderer(this, 0, name);
     }
     @Override

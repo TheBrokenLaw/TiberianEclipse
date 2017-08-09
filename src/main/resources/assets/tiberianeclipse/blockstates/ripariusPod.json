@@ -1,82 +1,42 @@
 {
   "forge_marker": 1,
-  "defaults": {
-    "textures": {
-      "0": "tiberianeclipse:blocks/tibSoil",
-      "1": "tiberianeclipse:blocks/tibCrystal",
-      "particle": "tiberianeclipse:blocks/tibSoil"
-    },
-    "model": "tiberianeclipse:tibPod/tiberiumPod"
-  },
+  "defaults": {"model": "tiberianeclipse:tibPod/tiberiumPod"},
   "variants": {
-    "age": {
-      "0": {
-        "textures": {
-          "0": "tiberianeclipse:blocks/tibSoil",
-          "1": "tiberianeclipse:blocks/tibCrystal",
-          "particle": "tiberianeclipse:blocks/tibSoil"
-        },
-        "model": "tiberianeclipse:tibPod/tiberiumPod"
-      },
-      "1": {
-        "textures": {
-          "0": "tiberianeclipse:blocks/tibSoil",
-          "1": "tiberianeclipse:blocks/tibCrystal",
-          "particle": "tiberianeclipse:blocks/tibSoil"
-        },
-        "model": "tiberianeclipse:tibPod/tiberiumPod1"
-      },
-      "2": {
-        "textures": {
-          "0": "tiberianeclipse:blocks/tibSoil",
-          "1": "tiberianeclipse:blocks/tibCrystal",
-          "particle": "tiberianeclipse:blocks/tibSoil"
-        },
-        "model": "tiberianeclipse:tibPod/tiberiumPod2"
-      },
-      "3": {
-        "textures": {
-          "0": "tiberianeclipse:blocks/tibSoil",
-          "1": "tiberianeclipse:blocks/tibCrystal",
-          "particle": "tiberianeclipse:blocks/tibSoil"
-        },
-        "model": "tiberianeclipse:tibPod/tiberiumPod3"
-      },
-      "4": {
-        "textures": {
-          "0": "tiberianeclipse:blocks/tibSoil",
-          "1": "tiberianeclipse:blocks/tibCrystal",
-          "particle": "tiberianeclipse:blocks/tibSoil"
-        },
-        "model": "tiberianeclipse:tibPod/tiberiumPod4"
-      },
-      "5": {
-        "textures": {
-          "0": "tiberianeclipse:blocks/tibSoil",
-          "1": "tiberianeclipse:blocks/tibCrystal",
-          "particle": "tiberianeclipse:blocks/tibSoil"
-        },
-        "model": "tiberianeclipse:tibPod/tiberiumPod5"
-      },
-      "6": {
-        "textures": {
-          "0": "tiberianeclipse:blocks/tibSoil",
-          "1": "tiberianeclipse:blocks/tibCrystal",
-          "particle": "tiberianeclipse:blocks/tibSoil"
-        },
-        "model": "tiberianeclipse:tibPod/tiberiumPod6"
-      },
-      "7": {
-        "textures": {
-          "0": "tiberianeclipse:blocks/tibSoil",
-          "1": "tiberianeclipse:blocks/tibCrystal",
-          "particle": "tiberianeclipse:blocks/tibSoil"
-        },
-        "model": "tiberianeclipse:tibPod/tiberiumPod7"
-      }
-      }
+      "age=0": {"model": "tiberianeclipse:tibPod/tiberiumPod"},
+      "age=1": {"model": "tiberianeclipse:tibPod/tiberiumPod1"},
+      "age=2": {"model": "tiberianeclipse:tibPod/tiberiumPod2"},
+      "age=3": {"model": "tiberianeclipse:tibPod/tiberiumPod3"},
+      "age=4": {"model": "tiberianeclipse:tibPod/tiberiumPod4"},
+      "age=5": {"model": "tiberianeclipse:tibPod/tiberiumPod5"},
+      "age=6": {"model": "tiberianeclipse:tibPod/tiberiumPod6"},
+      "age=7": {"model": "tiberianeclipse:tibPod/tiberiumPod7"},
+    "age=0": {"model": "tiberianeclipse:tibPod/tiberiumPod","y":90},
+    "age=1": {"model": "tiberianeclipse:tibPod/tiberiumPod1","y":90},
+    "age=2": {"model": "tiberianeclipse:tibPod/tiberiumPod2","y":90},
+    "age=3": {"model": "tiberianeclipse:tibPod/tiberiumPod3","y":90},
+    "age=4": {"model": "tiberianeclipse:tibPod/tiberiumPod4","y":90},
+    "age=5": {"model": "tiberianeclipse:tibPod/tiberiumPod5","y":90},
+    "age=6": {"model": "tiberianeclipse:tibPod/tiberiumPod6","y":90},
+    "age=7": {"model": "tiberianeclipse:tibPod/tiberiumPod7","y":90},
+    "age=0": {"model": "tiberianeclipse:tibPod/tiberiumPod","y":180},
+    "age=1": {"model": "tiberianeclipse:tibPod/tiberiumPod1","y":180},
+    "age=2": {"model": "tiberianeclipse:tibPod/tiberiumPod2","y":180},
+    "age=3": {"model": "tiberianeclipse:tibPod/tiberiumPod3","y":180},
+    "age=4": {"model": "tiberianeclipse:tibPod/tiberiumPod4","y":180},
+    "age=5": {"model": "tiberianeclipse:tibPod/tiberiumPod5","y":180},
+    "age=6": {"model": "tiberianeclipse:tibPod/tiberiumPod6","y":180},
+    "age=7": {"model": "tiberianeclipse:tibPod/tiberiumPod7","y":180},
+    "age=0": {"model": "tiberianeclipse:tibPod/tiberiumPod","y":270},
+    "age=1": {"model": "tiberianeclipse:tibPod/tiberiumPod1","y":270},
+    "age=2": {"model": "tiberianeclipse:tibPod/tiberiumPod2","y":270},
+    "age=3": {"model": "tiberianeclipse:tibPod/tiberiumPod3","y":270},
+    "age=4": {"model": "tiberianeclipse:tibPod/tiberiumPod4","y":270},
+    "age=5": {"model": "tiberianeclipse:tibPod/tiberiumPod5","y":270},
+    "age=6": {"model": "tiberianeclipse:tibPod/tiberiumPod6","y":270},
+    "age=7": {"model": "tiberianeclipse:tibPod/tiberiumPod7","y":270}
+
     },
 "inventory": {
-"model": "tiberianeclipse:tiberiumPod"
+"model": "tiberianeclipse:item/tiberiumPod"
 }
 }

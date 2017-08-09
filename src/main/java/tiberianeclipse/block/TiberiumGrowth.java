@@ -1,15 +1,21 @@
 package tiberianeclipse.block;
 
+import com.google.common.base.Predicate;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -30,7 +36,13 @@ import java.util.Random;
 
 
 public class TiberiumGrowth extends BlockOre implements IGrowable {
-    protected static final AxisAlignedBB TIB_AABB = new AxisAlignedBB(0.30000001192092896D, 0.0D, 0.30000001192092896D, 0.699999988079071D, 0.2D, 0.699999988079071D);
+
+  //  public static final PropertyDirection FACING = PropertyDirection.create("facing", new Predicate<EnumFacing>()
+ //   {public boolean apply(@Nullable EnumFacing p_apply_1_)
+  //      {
+   //         return p_apply_1_ != EnumFacing.DOWN;
+   //     }});
+    protected static final AxisAlignedBB TIB_AABB = new AxisAlignedBB(0.30000001192092896D, 0.0D, 0.30000001192092896D, 0.7D, 0.7D, 0.7D);
     public int meta;
     public float hardness;
     public float resistance;
@@ -41,17 +53,19 @@ public class TiberiumGrowth extends BlockOre implements IGrowable {
     public String name;
     public Material material;
     public boolean whatthefuck;
+    public int meta2;
     public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 7);
     public BlockPos pos;
     public TiberiumGrowth(String name,Material material, Item drop, int meta, int leastQuantity, int mostQuantity, float hardness, float resistance, float lightLevel, boolean whatthefuck) {
-        super(name, drop, meta, leastQuantity, mostQuantity, lightLevel, hardness, resistance);
+        super(name, material, drop, meta, leastQuantity, mostQuantity, lightLevel, hardness, resistance);
         setUnlocalizedName(name);
         this.material=material;
-        this.setHarvestLevel("pickaxe",2);
+        this.setHarvestLevel("pickaxe",0);
         this.drop = drop;
         this.leastQuantity = leastQuantity;
         this.mostQuantity=mostQuantity;
         this.meta = meta;
+        this.meta2=meta2;
         this.hardness = hardness;
         this.resistance = resistance;
         this.setDefaultState(this.blockState.getBaseState().withProperty(AGE, Integer.valueOf(0)));
@@ -64,7 +78,7 @@ public class TiberiumGrowth extends BlockOre implements IGrowable {
         this.whatthefuck = whatthefuck;
         this.setTickRandomly(true);
         this.pos=pos;
-
+   //     this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP));
     }
 
     protected PropertyInteger getAgeProperty() {
@@ -83,16 +97,6 @@ public class TiberiumGrowth extends BlockOre implements IGrowable {
         return ((Integer) state.getValue(this.getAgeProperty())).intValue();
     }
 
-    public void grow(World worldIn, BlockPos pos, IBlockState state) {
-        int i = this.getAge(state) + this.getBonemealAgeIncrease(worldIn);
-        int j = this.getMaxAge();
-
-        if (i > j) {
-            i = j;
-        }
-
-        worldIn.setBlockState(pos, this.withAge(i), 2);
-    }
     public boolean isOpaqueCube(IBlockState state)
     {
         return false;
@@ -107,26 +111,39 @@ public class TiberiumGrowth extends BlockOre implements IGrowable {
     }
 
     public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state) {
+        int i = this.getAge(state) + this.getBonemealAgeIncrease(worldIn);
+        int j = this.getMaxAge();
+
+        if (i > j) {
+            i = j;
+        }
+
+        worldIn.setBlockState(pos, this.withAge(i), 2);
     }
 
     public IBlockState getStateFromMeta(int meta) {
         return this.withAge(meta);
     }
 
-    public int getMetaFromState(IBlockState state) {
+    public int getMetaFromState(IBlockState state)
+    {
         return this.getAge(state);
     }
 
-    protected BlockStateContainer createBlockState() {
-        return new BlockStateContainer(this, new IProperty[]{AGE});
+    protected BlockStateContainer createBlockState()
+    {
+
+        return new BlockStateContainer(this, new IProperty[]{AGE});//, FACING});
     }
 
 
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
         return TIB_AABB;
     }
-   public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-            int age=getAge(state);
+
+    public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+
+        int age=getAge(state);
            if (rand.nextInt((10)-age) == 0) {
             int i = 5;
                int j = 4;
@@ -151,9 +168,9 @@ public class TiberiumGrowth extends BlockOre implements IGrowable {
                 blockpos1 = pos.add(rand.nextInt(3) - 1, rand.nextInt(2) - rand.nextInt(2), rand.nextInt(3) - 1);
             }
 
-            if ((worldIn.isAirBlock(blockpos1)&&worldIn.getBlockState(pos.down())==ModBlocks.tiberiumGround.getDefaultState())) {
-                worldIn.setBlockState(blockpos1, this.getDefaultState(), 2);
-            }
+          if ((worldIn.isAirBlock(blockpos1)&&worldIn.getBlockState(pos.down())==ModBlocks.tiberiumGround.getDefaultState())) {
+               worldIn.setBlockState(blockpos1, this.getDefaultState(), 2);
+           }
         }
        super.updateTick(worldIn, pos, state, rand);
 
@@ -165,35 +182,47 @@ public class TiberiumGrowth extends BlockOre implements IGrowable {
            {
                float f = getGrowthChance(this, worldIn, pos);
 
-               if(net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt((int)(25.0F / f) + 1) == 0))
-               {
-                   worldIn.setBlockState(pos, this.withAge(i + 1), 2);
+              if(net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt((int)(25.0F / f) + 1) == 0))
+     {
+                  worldIn.setBlockState(pos, this.withAge(i + 1), 2);
                    net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state, worldIn.getBlockState(pos));
                }
            }
        }
 
-    }
+   }
+
+   /* public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
+    {
+        if (!worldIn.isRemote)
+       {
+
+
+
+                   for (int i = 0; i < 4; ++i)
+                    {
+                        BlockPos blockpos = pos.add(rand.nextInt(3) - 1, rand.nextInt(5)-4, rand.nextInt(3) - 1);
+
+                        if (blockpos.getY() >= 0 && blockpos.getY() < 256 && !worldIn.isBlockLoaded(blockpos.down())&&worldIn.getBlockState(pos.down())==ModBlocks.tiberiumGround.getDefaultState())
+                        {
+                          return;
+                       }
+
+                       IBlockState iblockstate = worldIn.getBlockState(blockpos.up());
+                        IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+
+                             if ((worldIn.isAirBlock(blockpos)&&worldIn.getBlockState(pos.down())==ModBlocks.tiberiumGround.getDefaultState())) {
+                                  worldIn.setBlockState(blockpos, this.getDefaultState(), 2);
+                              }
+                       }
+                  }
+*///       }
+
     protected static float getGrowthChance(Block blockIn, World worldIn, BlockPos pos) {
-        float f = 2.0F;
-        BlockPos blockpos1 = pos.north();
-        BlockPos blockpos2 = pos.south();
-        BlockPos blockpos3 = pos.west();
-        BlockPos blockpos4 = pos.east();
-        boolean flag = blockIn == worldIn.getBlockState(blockpos3).getBlock() || blockIn == worldIn.getBlockState(blockpos4).getBlock();
-        boolean flag1 = blockIn == worldIn.getBlockState(blockpos1).getBlock() || blockIn == worldIn.getBlockState(blockpos2).getBlock();
-
-        if (flag && flag1) {
-            f /= 2.0F;
-        } else {
-            boolean flag2 = blockIn == worldIn.getBlockState(blockpos3.north()).getBlock() || blockIn == worldIn.getBlockState(blockpos4.north()).getBlock() || blockIn == worldIn.getBlockState(blockpos4.south()).getBlock() || blockIn == worldIn.getBlockState(blockpos3.south()).getBlock();
-
-            if (flag2) {
-                f /= 2.0F;
-            }
-        }
-
+        float f = 4.0F;
         return f;
+
+
     }
     public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state)
     {
@@ -238,7 +267,143 @@ public class TiberiumGrowth extends BlockOre implements IGrowable {
         if (this.leastQuantity >= this.mostQuantity)
             return this.leastQuantity;
         return this.leastQuantity + random.nextInt(this.mostQuantity - this.leastQuantity + fortune + 1);
+  /*  }
+    private boolean canPlaceOn(World worldIn, BlockPos pos)
+    {
+        IBlockState state = worldIn.getBlockState(pos);
+        if (state.isSideSolid(worldIn, pos, EnumFacing.UP))
+        {
+            return true;
+        }
+        else
+        {
+            return state.getBlock().canPlaceTorchOnTop(state, worldIn, pos);
+        }
     }
+
+    public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
+    {
+        for (EnumFacing enumfacing : FACING.getAllowedValues())
+        {
+            if (this.canPlaceAt(worldIn, pos, enumfacing))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private boolean canPlaceAt(World worldIn, BlockPos pos, EnumFacing facing)
+    {
+        BlockPos blockpos = pos.offset(facing.getOpposite());
+        boolean flag = facing.getAxis().isHorizontal();
+        return flag && worldIn.isSideSolid(blockpos, facing, true) || facing.equals(EnumFacing.UP) && this.canPlaceOn(worldIn, blockpos);
+    }
+    public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
+    {
+        if (this.canPlaceAt(worldIn, pos, facing))
+        {
+            return this.getDefaultState().withProperty(FACING, facing);
+        }
+        else
+        {
+            for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL)
+            {
+                if (worldIn.isSideSolid(pos.offset(enumfacing.getOpposite()), enumfacing, true))
+                {
+                    return this.getDefaultState().withProperty(FACING, enumfacing);
+                }
+            }
+
+            return this.getDefaultState();
+        }
+    }
+
+    /**
+     * Called after the block is set in the Chunk data, but before the Tile Entity is set
+     */
+  //  public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
+   // {
+  //      this.checkForDrop(worldIn, pos, state);
+  //  }
+ //  protected boolean checkForDrop(World worldIn, BlockPos pos, IBlockState state)
+  //  {
+    /*    if (state.getBlock() == this && this.canPlaceAt(worldIn, pos, (EnumFacing)state.getValue(FACING)))
+      */ // {
+     //       return true;
+    //    }
+    //    else
+   //     {
+    //        if (worldIn.getBlockState(pos).getBlock() == this)
+   //         {
+   //             this.dropBlockAsItem(worldIn, pos, state, 0);
+  //              worldIn.setBlockToAir(pos);
+ //           }
+
+   //         return false;
+   //     }
+   // }
+  //  public IBlockState getStateFromMeta2(int meta2)
+   // {
+     //   IBlockState iblockstate = this.getDefaultState();
+
+    //   switch (meta2)
+      //  {
+         //   case 1:
+          //      iblockstate = iblockstate.withProperty(FACING, EnumFacing.EAST);
+         //       break;
+        //    case 2:
+         //       iblockstate = iblockstate.withProperty(FACING, EnumFacing.WEST);
+        //        break;
+         //   case 3:
+         //       iblockstate = iblockstate.withProperty(FACING, EnumFacing.SOUTH);
+        //        break;
+       //     case 4:
+       //         iblockstate = iblockstate.withProperty(FACING, EnumFacing.NORTH);
+       //         break;
+      //      case 5:
+      //      default:
+     //           iblockstate = iblockstate.withProperty(FACING, EnumFacing.UP);
+      //  }
+
+   //     return iblockstate;
+   // }
+   // public int getMetaFromState(IBlockState state2)
+   // {
+     //   int i = 0;
+
+     //   switch ((EnumFacing)state2.getValue(FACING))
+     //   {
+     //       case EAST:
+     //           i = i | 1;
+     //           break;
+     //       case WEST:
+      //          i = i | 2;
+      //          break;
+       //     case SOUTH:
+       //         i = i | 3;
+       //         break;
+       //     case NORTH:
+       //         i = i | 4;
+      //          break;
+       //     case DOWN:
+       //     case UP:
+      //      default:
+      //          i = i | 5;
+     //   }
+
+   //     return i;
+   // }
+  // public IBlockState withRotation(IBlockState state2, Rotation rot)
+  //  {
+  //      return state2.withProperty(FACING, rot.rotate((EnumFacing)state2.getValue(FACING)));
+  //  }
+  //  public IBlockState withMirror(IBlockState state2, Mirror mirrorIn)
+    //{
+  //      return state2.withRotation(mirrorIn.toRotation((EnumFacing)state2.getValue(FACING)));
+    }
+
 }
 
 

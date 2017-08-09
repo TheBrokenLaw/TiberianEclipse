@@ -10,22 +10,30 @@ import java.util.Random;
 
 public class BlockOre extends BlockBase {
     public Item drop;
+    public Material material;
     public float hardness;
     public float resistance;
-    public int meta;
+    private int meta;
     public int leastQuantity;
     public int mostQuantity;
     public float setLightLevel;
-    public BlockOre(String name, Item drop, int meta, int leastQuantity, int mostQuantity, float hardness, float resistance, float setLightLevel) {
-        super(Material.ROCK, name, resistance, hardness);
+    protected BlockOre(String name, Material material, Item drop, int meta, int leastQuantity, int mostQuantity, float hardness, float resistance, float setLightLevel) {
+        super(material, name);
         this.drop = drop;
         this.meta = meta;
-        this.setHarvestLevel("pickaxe",2);
+        this.material=material;
+        this.setHarvestLevel("pickaxe",0);
         this.leastQuantity = leastQuantity;
         this.mostQuantity = mostQuantity;
         this.setHardness(hardness);
         this.setResistance(resistance);
         this.setLightLevel(setLightLevel);
+    }
+    protected BlockOre(String unlocalizedName, Material mat, Item drop, int leastQuantity, int mostQuantity) {
+        this(unlocalizedName, mat, drop, 0, leastQuantity, mostQuantity,0,0,0);
+    }
+    protected BlockOre(String name, Material material, Item drop){
+        this(name,material,drop,1,1);
     }
     @Override
     public Item getItemDropped(IBlockState blockstate, Random random, int fortune) {

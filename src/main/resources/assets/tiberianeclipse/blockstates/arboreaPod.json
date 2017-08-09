@@ -9,74 +9,16 @@
     "model": "tiberianeclipse:tibPurplePod/tiberiumPod"
   },
   "variants": {
-    "age": {
-      "0": {
-        "textures": {
-          "0": "tiberianeclipse:blocks/tibSoil",
-          "1": "tiberianeclipse:blocks/tibPurpleCrystal",
-          "particle": "tiberianeclipse:blocks/tibSoil"
-        },
-        "model": "tiberianeclipse:tibPurplePod/tiberiumPod"
-      },
-      "1": {
-        "textures": {
-          "0": "tiberianeclipse:blocks/tibSoil",
-          "1": "tiberianeclipse:blocks/tibPurpleCrystal",
-          "particle": "tiberianeclipse:blocks/tibSoil"
-        },
-        "model": "tiberianeclipse:tibPurplePod/tiberiumPod1"
-      },
-      "2": {
-        "textures": {
-          "0": "tiberianeclipse:blocks/tibSoil",
-          "1": "tiberianeclipse:blocks/tibPurpleCrystal",
-          "particle": "tiberianeclipse:blocks/tibSoil"
-        },
-        "model": "tiberianeclipse:tibPurplePod/tiberiumPod2"
-      },
-      "3": {
-        "textures": {
-          "0": "tiberianeclipse:blocks/tibSoil",
-          "1": "tiberianeclipse:blocks/tibPurpleCrystal",
-          "particle": "tiberianeclipse:blocks/tibSoil"
-        },
-        "model": "tiberianeclipse:tibPurplePod/tiberiumPod3"
-      },
-      "4": {
-        "textures": {
-          "0": "tiberianeclipse:blocks/tibSoil",
-          "1": "tiberianeclipse:blocks/tibPurpleCrystal",
-          "particle": "tiberianeclipse:blocks/tibSoil"
-        },
-        "model": "tiberianeclipse:tibPurplePod/tiberiumPod4"
-      },
-      "5": {
-        "textures": {
-          "0": "tiberianeclipse:blocks/tibSoil",
-          "1": "tiberianeclipse:blocks/tibPurpleCrystal",
-          "particle": "tiberianeclipse:blocks/tibSoil"
-        },
-        "model": "tiberianeclipse:tibPurplePod/tiberiumPod5"
-      },
-      "6": {
-        "textures": {
-          "0": "tiberianeclipse:blocks/tibSoil",
-          "1": "tiberianeclipse:blocks/tibPurpleCrystal",
-          "particle": "tiberianeclipse:blocks/tibSoil"
-        },
-        "model": "tiberianeclipse:tibPurplePod/tiberiumPod6"
-      },
-      "7": {
-        "textures": {
-          "0": "tiberianeclipse:blocks/tibSoil",
-          "1": "tiberianeclipse:blocks/tibPurpleCrystal",
-          "particle": "tiberianeclipse:blocks/tibSoil"
-        },
-        "model": "tiberianeclipse:tibPurplePod/tiberiumPod7"
-      }
-      }
-    },
+    "age=0": {"model": "tiberianeclipse:tibPurplePod/tiberiumPod"},
+    "age=1": {"model": "tiberianeclipse:tibPurplePod/tiberiumPod1"},
+    "age=2": {"model": "tiberianeclipse:tibPurplePod/tiberiumPod2"},
+    "age=3": {"model": "tiberianeclipse:tibPurplePod/tiberiumPod3"},
+    "age=4": {"model": "tiberianeclipse:tibPurplePod/tiberiumPod4"},
+    "age=5": {"model": "tiberianeclipse:tibPurplePod/tiberiumPod5"},
+    "age=6": {"model": "tiberianeclipse:tibPurplePod/tiberiumPod6"},
+    "age=7": {"model": "tiberianeclipse:tibPurplePod/tiberiumPod7"}
+  },
 "inventory": {
-"model": "tiberianeclipse:tiberiumPod"
+"model": "tiberianeclipse:item/tiberiumPod"
 }
 }

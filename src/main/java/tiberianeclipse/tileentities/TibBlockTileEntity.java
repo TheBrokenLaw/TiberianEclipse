@@ -1,18 +1,21 @@
-package tiberianeclipse.block;
+package tiberianeclipse.tileentities;
 
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import tiberianeclipse.block.TiberiumGrowth;
 
 import javax.annotation.Nullable;
 
-public abstract class BlockTileEntity<TE extends TileEntity> extends BlockBase {
+public abstract class TibBlockTileEntity<TE extends TileEntity> extends TiberiumGrowth {
 
-    public BlockTileEntity(Material material, String name, float hardness, float resistance) {
-        super(material, name, hardness, resistance);
+    public TibBlockTileEntity(String name, Material material, Item drop, int meta, int leastQuantity, int mostQuantity, float hardness, float resistance, float lightLevel, boolean whatthefuck) {
+        super(name,material,drop,meta, leastQuantity,mostQuantity,hardness, resistance,lightLevel, whatthefuck);
     }
 
     public abstract Class<TE> getTileEntityClass();

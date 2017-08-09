@@ -21,18 +21,18 @@ import tiberianeclipse.util.IModelProvider;
 
 public class BlockBase extends Block implements IModelProvider {
     protected String name;
-
-    public BlockBase(Material material, String name, float hardness, float resistance) {
+    public Material material;
+    public BlockBase(Material material, String name) {
         super(material);
         this.name = name;
         setUnlocalizedName(name);
         setRegistryName(name);
-        this.setHarvestLevel("pickaxe",2);
+        this.material=material;
         setCreativeTab(Main.creativeTab);
     }
 
     @Override
-    public void registerItemModel(Item item) {
+    public void registerItemModel(Item item, int meta) {
         Main.proxy.registerItemRenderer(item, 0, name);
     }
 

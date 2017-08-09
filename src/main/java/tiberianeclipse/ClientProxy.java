@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import tiberianeclipse.block.ModBlocks;
+import tiberianeclipse.entities.ModEntities;
 import tiberianeclipse.item.ModItems;
 import tiberianeclipse.world.ModWorldGen;
 
@@ -21,13 +22,16 @@ import static tiberianeclipse.Main.modId;
 public class ClientProxy extends CommonProxy {
 
 
-    @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
-
+    @Override
+    public void preInit(FMLPreInitializationEvent e) {
+        super.preInit(e);
+        ModItems.init();
+        ModBlocks.init();
+        ModEntities.init();
     }
 
-    public void registerItemRenderer(Item item, int meta, String id) {
-        ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(modId + ":" + id, "inventory"));
+    public void registerItemRenderer(Item item, int meta, String name) {
+        ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(modId + ":" + name, "inventory"));
     }
 
 
