@@ -35,8 +35,8 @@ public class Main {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        ModBlocks.init();
         ModItems.init();
+        ModBlocks.init();
         GameRegistry.registerWorldGenerator(new ModWorldGen(), 3);
         ModBiome.registerBiomes();
     }

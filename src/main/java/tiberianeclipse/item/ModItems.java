@@ -3,8 +3,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import tiberianeclipse.ClientProxy;
-import tiberianeclipse.item.tools.BaseSword;
-import tiberianeclipse.item.tools.BaseTool;
+import tiberianeclipse.item.tools.*;
 import tiberianeclipse.util.IModelProvider;
 
 public class ModItems extends ClientProxy{
@@ -29,6 +28,21 @@ public class ModItems extends ClientProxy{
     public static BaseSword viniferaBlade;
     public static BaseSword cruentusBlade;
     public static BaseSword arboreaBlade;
+        //Picks
+    public static BasePick ripariusPick;
+    public static BasePick viniferaPick;
+    public static BasePick cruentusPick;
+    public static BasePick arboreaPick;
+        //Shovels
+    public static BaseShovel ripariusShovel;
+    public static BaseShovel viniferaShovel;
+    public static BaseShovel cruentusShovel;
+    public static BaseShovel arboreaShovel;
+        //Axes
+    public static BaseAxe ripariusAxe;
+    public static BaseAxe viniferaAxe;
+    public static BaseAxe cruentusAxe;
+    public static BaseAxe arboreaAxe;
 
     public static ItemBase refinedTiberium;
     public static void init() {
@@ -54,7 +68,21 @@ public class ModItems extends ClientProxy{
         viniferaBlade = register(new BaseSword(BaseTool.vinifera, "viniferaBlade"));
         cruentusBlade = register(new BaseSword(BaseTool.cruentus, "cruentusBlade"));
         arboreaBlade = register(new BaseSword(BaseTool.arborea, "arboreaBlade"));
-
+            //Picks
+        ripariusPick = register(new BasePick(BaseTool.riparius, "ripariusPick"));
+        viniferaPick = register(new BasePick(BaseTool.vinifera, "viniferaPick"));
+        cruentusPick = register(new BasePick(BaseTool.cruentus, "cruentusPick"));
+        arboreaPick = register(new BasePick(BaseTool.arborea, "arboreaPick"));
+            //Axes
+        ripariusShovel = register(new BaseShovel(BaseTool.riparius, "ripariusShovel"));
+        viniferaShovel = register(new BaseShovel(BaseTool.vinifera, "viniferaShovel"));
+        cruentusShovel = register(new BaseShovel(BaseTool.cruentus, "cruentusShovel"));
+        arboreaShovel = register(new BaseShovel(BaseTool.arborea, "arboreaShovel"));
+            //Shovels
+        ripariusAxe = register(new BaseAxe(BaseTool.riparius, "ripariusAxe"));
+        viniferaAxe = register(new BaseAxe(BaseTool.vinifera, "viniferaAxe"));
+        cruentusAxe = register(new BaseAxe(BaseTool.cruentus, "cruentusAxe"));
+        arboreaAxe = register(new BaseAxe(BaseTool.arborea, "arboreaAxe"));
     }
 
     private static <T extends Item> T register(T item) {
