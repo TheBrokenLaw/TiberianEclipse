@@ -40,7 +40,7 @@ public class ModBlocks extends ClientProxy {
         ripariusPod =register (new RipariusCrystal("ripariusPod",Material.ROCK,ModItems.ripariusShard, 0, 3,6,1,3,0.5f,true));
         podTest= register (new BlockBase(Material.GLASS, "podTest"));
         tiberiumGround=register(new BlockGround(Material.GRASS, "groundTiberium",2,4));
-        tibPodTest=register(new BlockTibPod("tibPodTest",Material.ROCK, ModItems.ripariusShard, 0,0,3,6,1,5,.5f,true));
+        tibPodTest=register(new BlockTibPod("tibPodTest",Material.ROCK, ModItems.ripariusShard, 0,3,6,1,5,.5f,true));
         testDrops=register(new BlockTestDrops("TestDropper",Material.ROCK, ModItems.ripariusShard, 0,3,6));
     }
     private static <T extends Block> T register(T block, ItemBlock itemBlock){

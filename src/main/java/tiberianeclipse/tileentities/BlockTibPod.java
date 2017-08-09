@@ -27,8 +27,8 @@ public class BlockTibPod extends TibBlockTileEntity<TibTileEntity> {
     public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 7);
     public BlockPos pos;
 
-    public BlockTibPod(String name, Material material, Item drop, int meta, int meta2, int leastQuantity, int mostQuantity, float hardness, float resistance, float lightLevel, boolean whatthefuck) {
-        super(name, material, drop, meta, meta2, leastQuantity, mostQuantity, hardness, resistance, lightLevel, whatthefuck);
+    public BlockTibPod(String name, Material material, Item drop, int meta, int leastQuantity, int mostQuantity, float hardness, float resistance, float lightLevel, boolean whatthefuck) {
+        super(name, material, drop, meta,leastQuantity, mostQuantity, hardness, resistance, lightLevel, whatthefuck);
         setUnlocalizedName(name);
         this.material = material;
         this.setHarvestLevel("pickaxe", 0);
