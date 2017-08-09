@@ -24,12 +24,12 @@ public class BiomeRipariusField extends Biome {
         super(properties);
         this.theBiomeDecorator.treesPerChunk = -100;
         this.theBiomeDecorator.grassPerChunk = 64;
-        this.topBlock = ModBlocks.tiberiumGround.getDefaultState();
+        this.topBlock = ModBlocks.fieldGrass.getDefaultState();
         this.spawnableMonsterList.clear();
         this.spawnableCreatureList.clear();
         this.spawnableWaterCreatureList.clear();
         this.ripariusPodPerChunk=64;
-        this.fillerBlock=STONE;
+        this.fillerBlock=ModBlocks.tiberiumGround.getDefaultState();
 
     }
 
@@ -70,10 +70,10 @@ public class BiomeRipariusField extends Biome {
         }
     }
     public void genTerrainBlocks(World world, Random rand, ChunkPrimer chunkPrimer, int x, int z, double noiseVal){
-       this.topBlock=ModBlocks.tiberiumGround.getDefaultState();
+       this.topBlock=ModBlocks.fieldGrass.getDefaultState();
        if(noiseVal>1.0D){
-           this.topBlock=ModBlocks.tiberiumGround.getDefaultState();
-           this.fillerBlock=Blocks.STONE.getDefaultState();
+           this.topBlock=ModBlocks.fieldGrass.getDefaultState();
+           this.fillerBlock=ModBlocks.tiberiumGround.getDefaultState();
        }
        this.generateBiomeTerrain(world, rand, chunkPrimer, x,z,noiseVal);
     }

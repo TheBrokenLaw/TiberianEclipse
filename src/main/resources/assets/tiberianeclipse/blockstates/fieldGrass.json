@@ -1,0 +1,24 @@
+{
+  "variants": {
+    "normal": [
+      {
+        "model": "tiberianeclipse:fieldGrass"
+      },
+      {
+        "model": "tiberianeclipse:fieldGrass",
+        "y": 90
+      },
+      {
+        "model": "tiberianeclipse:fieldGrass",
+        "y": 180
+      },
+      {
+        "model": "tiberianeclipse:fieldGrass",
+        "y": 270
+      }
+    ],
+    "inventory": {
+      "model": "cube_all"
+    }
+  }
+}

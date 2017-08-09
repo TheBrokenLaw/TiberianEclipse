@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "bottom": "tiberianeclipse:blocks/groundTiberium",
+        "top": "tiberianeclipse:blocks/fieldGrass",
+        "side": "tiberianeclipse:blocks/fieldGrassSide"
+    }
+}
