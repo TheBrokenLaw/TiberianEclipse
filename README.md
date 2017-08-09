@@ -17,7 +17,7 @@ Tiberium Fields that change the world around them.
  - Currently, plan is to find a way to create a biome, make it spread itself, and find a way to slow its growth as it expands.
  - Fields of all four types will exist, though Riparius and Vinifera patches will be the most common by far. 
  - Hopefully I can find some method to mature some of the crystals in a given field as it grows, and then have that crystal begin       converting the field to its type.
- - As field value goes up, crystal spread goes down. This means that if you are lucky enough to find a patch of Arborea, or have some evolve in a field you control, you will have to carefully consider harvesting it versus cultivation.
+ - As field value goes up, crystal spread goes down. This means that if you are lucky enough to find a patch of Vinifera, or have some evolve in a field you control, you will have to carefully consider harvesting it versus cultivation.
  - Tiberium generates tiberium pollution, which can cause severe health problems in living creatures and severe weather disturbances. I.E. as pollution in an area increases, animals die off and the occasional ion storm occurs.
 
 Blue, yellow, and red zones
