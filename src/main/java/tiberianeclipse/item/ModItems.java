@@ -23,27 +23,32 @@ public class ModItems extends ClientProxy{
     public static ItemBase cruArborCluster;
     public static ItemBase arborCruCluster;
     //Tools
+    public static ItemBase refinedTibRod;
         //Swords
+    public static BaseSword refTibSword;
     public static BaseSword ripariusBlade;
     public static BaseSword viniferaBlade;
     public static BaseSword cruentusBlade;
     public static BaseSword arboreaBlade;
         //Picks
+    public static BasePick refTibPick;
 /*    public static BasePick ripariusPick;
     public static BasePick viniferaPick;
     public static BasePick cruentusPick;
     public static BasePick arboreaPick;
-        //Shovels
-    public static BaseShovel ripariusShovel;
+*/       //Shovels
+    public static BaseShovel refTibShovel;
+/*    public static BaseShovel ripariusShovel;
     public static BaseShovel viniferaShovel;
     public static BaseShovel cruentusShovel;
     public static BaseShovel arboreaShovel;
-        //Axes
-    public static BaseAxe ripariusAxe;
+*/        //Axes
+    public static BaseAxe refTibAxe;
+/*    public static BaseAxe ripariusAxe;
     public static BaseAxe viniferaAxe;
     public static BaseAxe cruentusAxe;
-*/    public static BaseAxe arboreaAxe;
-
+    public static BaseAxe arboreaAxe;
+*/
     public static ItemBase refinedTiberium;
     public static void init() {
         //Tiberium shards and clusters
@@ -64,26 +69,31 @@ public class ModItems extends ClientProxy{
         refinedTiberium = register(new ItemBase("refinedTiberium",0));
         //Tiberium Tools
             //Swords
+        refTibSword=register(new BaseSword(BaseTool.refinedTibMaterial,"refTibSword"));
         ripariusBlade = register(new BaseSword(BaseTool.riparius, "ripariusBlade"));
         viniferaBlade = register(new BaseSword(BaseTool.vinifera, "viniferaBlade"));
         cruentusBlade = register(new BaseSword(BaseTool.cruentus, "cruentusBlade"));
         arboreaBlade = register(new BaseSword(BaseTool.arborea, "arboreaBlade"));
             //Picks
-  /*      ripariusPick = register(new BasePick(BaseTool.riparius, "ripariusPick"));
+        refTibPick= register(new BasePick(BaseTool.refinedTibMaterial,"refTibPick"));
+    /*  ripariusPick = register(new BasePick(BaseTool.riparius, "ripariusPick"));
         viniferaPick = register(new BasePick(BaseTool.vinifera, "viniferaPick"));
         cruentusPick = register(new BasePick(BaseTool.cruentus, "cruentusPick"));
         arboreaPick = register(new BasePick(BaseTool.arborea, "arboreaPick"));
-            //Axes
-        ripariusShovel = register(new BaseShovel(BaseTool.riparius, "ripariusShovel"));
+    */         //Axes
+        refTibAxe=register(new BaseAxe(BaseTool.refinedTibMaterial,"refTibAxe"));
+    /*  ripariusShovel = register(new BaseShovel(BaseTool.riparius, "ripariusShovel"));
         viniferaShovel = register(new BaseShovel(BaseTool.vinifera, "viniferaShovel"));
         cruentusShovel = register(new BaseShovel(BaseTool.cruentus, "cruentusShovel"));
         arboreaShovel = register(new BaseShovel(BaseTool.arborea, "arboreaShovel"));
-            //Shovels
-        ripariusAxe = register(new BaseAxe(BaseTool.riparius, "ripariusAxe"));
+    */         //Shovels
+        refTibShovel=register(new BaseShovel(BaseTool.refinedTibMaterial,"refTibShovel"));
+    /*    ripariusAxe = register(new BaseAxe(BaseTool.riparius, "ripariusAxe"));
         viniferaAxe = register(new BaseAxe(BaseTool.vinifera, "viniferaAxe"));
         cruentusAxe = register(new BaseAxe(BaseTool.cruentus, "cruentusAxe"));
         arboreaAxe = register(new BaseAxe(BaseTool.arborea, "arboreaAxe"));
-  */  }
+    */  refinedTibRod = register(new ItemBase("refinedTibRod",0));
+    }
 
     private static <T extends Item> T register(T item) {
         GameRegistry.register(item);

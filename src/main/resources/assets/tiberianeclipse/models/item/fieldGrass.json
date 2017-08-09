@@ -1,0 +1,6 @@
+{
+    "parent": cube_all",
+    "textures": {
+        "layer0": "tiberianeclipse:items/groundTiberium"
+    }
+}

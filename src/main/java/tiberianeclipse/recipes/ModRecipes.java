@@ -51,6 +51,16 @@ public class ModRecipes{
         GameRegistry.addRecipe(new ItemStack(ModItems.viniferaBlade),new Object[]{" S ", " S ", " B ", 'S', ModItems.viniferaCluster, 'B', ModItems.refinedTiberium});
         GameRegistry.addRecipe(new ItemStack(ModItems.cruentusBlade),new Object[]{" S ", " S ", " B ", 'S', ModItems.cruentusCluster, 'B', ModItems.refinedTiberium});
         GameRegistry.addRecipe(new ItemStack(ModItems.arboreaBlade), new Object[]{" S ", " S ", " B ", 'S', ModItems.arboreaCluster, 'B', ModItems.refinedTiberium});
+            //Picks
+
+            //Shovels
+            //Axes
+        //Misc
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.refinedTibRod), new Object[]{"  R"," R ","R  ", 'R', ModItems.refinedTiberium});
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.refTibSword), new Object[]{" R "," R "," B ", 'R', ModItems.refinedTiberium,'B',ModItems.refinedTibRod});
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.refTibPick), new Object[]{"RRR"," B "," B ", 'R', ModItems.refinedTiberium,'B',ModItems.refinedTibRod});
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.refTibAxe), new Object[]{"RR ","RB "," B ", 'R', ModItems.refinedTiberium,'B',ModItems.refinedTibRod});
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.refTibShovel), new Object[]{" R "," B "," B ", 'R', ModItems.refinedTiberium,'B',ModItems.refinedTibRod});
     }
 
 

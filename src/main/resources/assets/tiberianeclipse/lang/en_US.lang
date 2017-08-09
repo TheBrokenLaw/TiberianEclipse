@@ -18,6 +18,11 @@ item.ripariusBlade.name=Green Tiberium Sword
 item.viniferaBlade.name=Blue Tiberium Sword
 item.cruentusBlade.name=Red Tiberium Sword
 item.arboreaBlade.name=??? Tiberium Sword
+item.refTibPick.name=Refined Tiberium Pickaxe
+item.refTibAxe.name=Refined Tiberium Axe
+item.refTibShovel.name=Refined Tiberium Shovel
+item.refTibSword.name=Refined Tiberium Sword
+item.refinedTibRod=Refined Tiberium Rod
 # Blocks
 tile.rockRiparius.name=Riparius Stone
 tile.rockVinifera.name=Vinifera Stone

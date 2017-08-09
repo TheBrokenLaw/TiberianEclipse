@@ -18,7 +18,7 @@
       }
     ],
     "inventory": {
-      "model": "cube_all"
+      "model": "tiberianeclipse:block/fieldGrass"
     }
   }
 }
