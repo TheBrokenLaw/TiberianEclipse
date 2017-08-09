@@ -16,7 +16,14 @@ public class BlockGrass extends BlockGround {
 
     public BlockGrass(Material material, String name){
         super(material, name, 2,3);
+        this.setHarvestLevel("spade",0);
     }
+
+    @Override
+    public void setHarvestLevel(String toolClass, int level) {
+        super.setHarvestLevel("spade", 0);
+    }
+
 
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
