@@ -24,12 +24,12 @@ public class BiomeArboreaField extends Biome {
         super(properties);
         this.theBiomeDecorator.treesPerChunk = -100;
         this.theBiomeDecorator.grassPerChunk = 64;
-        this.topBlock = ModBlocks.fieldGrass.getDefaultState();
+        this.topBlock =Blocks.GRASS.getDefaultState();
         this.spawnableMonsterList.clear();
         this.spawnableCreatureList.clear();
         this.spawnableWaterCreatureList.clear();
         this.arboreaPodPerChunk=64;
-        this.fillerBlock=ModBlocks.tiberiumGround.getDefaultState();
+        this.fillerBlock=Blocks.DIRT.getDefaultState();
 
     }
 
@@ -70,10 +70,10 @@ public class BiomeArboreaField extends Biome {
         }
     }
     public void genTerrainBlocks(World world, Random rand, ChunkPrimer chunkPrimer, int x, int z, double noiseVal){
-        this.topBlock=ModBlocks.fieldGrass.getDefaultState();
+        this.topBlock=Blocks.GRASS.getDefaultState();
         if(noiseVal>1.0D){
-            this.topBlock=ModBlocks.fieldGrass.getDefaultState();
-            this.fillerBlock=ModBlocks.tiberiumGround.getDefaultState();
+            this.topBlock=Blocks.GRASS.getDefaultState();
+            this.fillerBlock=Blocks.DIRT.getDefaultState();
         }
         this.generateBiomeTerrain(world, rand, chunkPrimer, x,z,noiseVal);
     }

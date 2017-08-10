@@ -1,6 +1,7 @@
 package tiberianeclipse.recipes;
 
 import com.sun.corba.se.spi.ior.ObjectKey;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
@@ -56,6 +57,7 @@ public class ModRecipes{
             //Shovels
             //Axes
         //Misc
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.tibProcessor),new Object[]{"CBC","BFB","CBC",'C', Blocks.COBBLESTONE,'F',Blocks.FURNACE,'B',ModBlocks.refinedTiberiumBlock});
         GameRegistry.addShapedRecipe(new ItemStack(ModItems.refinedTibRod), new Object[]{"  R"," R ","R  ", 'R', ModItems.refinedTiberium});
         GameRegistry.addShapedRecipe(new ItemStack(ModItems.refTibSword), new Object[]{" R "," R "," B ", 'R', ModItems.refinedTiberium,'B',ModItems.refinedTibRod});
         GameRegistry.addShapedRecipe(new ItemStack(ModItems.refTibPick), new Object[]{"RRR"," B "," B ", 'R', ModItems.refinedTiberium,'B',ModItems.refinedTibRod});

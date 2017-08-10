@@ -2,6 +2,7 @@ package tiberianeclipse;
 
 import net.minecraft.item.Item;
 
+import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -28,5 +29,7 @@ public class CommonProxy {
         ModBiome.registerBiomes();
 
     }
-
+    public String localize(String unlocalized, Object...args){
+        return I18n.translateToLocalFormatted(unlocalized,args);
+    }
 }

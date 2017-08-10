@@ -29,5 +29,6 @@ tile.rockVinifera.name=Vinifera Stone
 tile.rockCruentus.name=Cruentus Stone
 tile.rockArborea.name=Arborea Stone
 tile.greenTibBush.name=Riparius Crystal
+tile.tibProcessor.name=Rudimentary Tiberium Processor
 # Misc
 itemGroup.tiberianeclipse=Tiberian Eclipse

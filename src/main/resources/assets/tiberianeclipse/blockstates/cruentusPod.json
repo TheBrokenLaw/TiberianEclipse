@@ -41,22 +41,22 @@
 
     ],
     "age=5": [
-      {"model": "tiberianeclipse:tibRedPod/tiberiumPod5"},
-      {"model": "tiberianeclipse:tibRedPod/tiberiumPod5","y":90},
-      {"model": "tiberianeclipse:tibRedPod/tiberiumPod5","y":180},
-      {"model": "tiberianeclipse:tibRedPod/tiberiumPod5","y":270}
+      {"model": "tiberianeclipse:tibRedPod/tiberiumPod4"},
+      {"model": "tiberianeclipse:tibRedPod/tiberiumPod4","y":90},
+      {"model": "tiberianeclipse:tibRedPod/tiberiumPod4","y":180},
+      {"model": "tiberianeclipse:tibRedPod/tiberiumPod4","y":270}
     ],
     "age=6": [
-      {"model": "tiberianeclipse:tibRedPod/tiberiumPod6"},
-      {"model": "tiberianeclipse:tibRedPod/tiberiumPod6","y":90},
-      {"model": "tiberianeclipse:tibRedPod/tiberiumPod6","y":180},
-      {"model": "tiberianeclipse:tibRedPod/tiberiumPod6","y":270}
+      {"model": "tiberianeclipse:tibRedPod/tiberiumPod4"},
+      {"model": "tiberianeclipse:tibRedPod/tiberiumPod4","y":90},
+      {"model": "tiberianeclipse:tibRedPod/tiberiumPod4","y":180},
+      {"model": "tiberianeclipse:tibRedPod/tiberiumPod4","y":270}
     ],
     "age=7": [
-      {"model": "tiberianeclipse:tibRedPod/tiberiumPod7"},
-      {"model": "tiberianeclipse:tibRedPod/tiberiumPod7","y":90},
-      {"model": "tiberianeclipse:tibRedPod/tiberiumPod7","y":180},
-      {"model": "tiberianeclipse:tibRedPod/tiberiumPod7","y":270}
+      {"model": "tiberianeclipse:tibRedPod/tiberiumPod4"},
+      {"model": "tiberianeclipse:tibRedPod/tiberiumPod4","y":90},
+      {"model": "tiberianeclipse:tibRedPod/tiberiumPod4","y":180},
+      {"model": "tiberianeclipse:tibRedPod/tiberiumPod4","y":270}
     ]
   },
 "inventory": {

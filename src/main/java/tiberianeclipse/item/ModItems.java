@@ -1,10 +1,12 @@
 package tiberianeclipse.item;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import tiberianeclipse.ClientProxy;
 import tiberianeclipse.item.tools.*;
+import tiberianeclipse.sounds.TESoundHandler;
 import tiberianeclipse.util.IModelProvider;
+import static tiberianeclipse.sounds.TESoundHandler.recordDarkValley;
+import static tiberianeclipse.sounds.TESoundHandler.recordEidolon;
 
 public class ModItems extends ClientProxy{
     // Tiberium Varieties
@@ -48,7 +50,9 @@ public class ModItems extends ClientProxy{
     public static BaseAxe viniferaAxe;
     public static BaseAxe cruentusAxe;
     public static BaseAxe arboreaAxe;
-*/
+*/        //Music Discs
+    public static Record darkVall;
+    public static Record eidolon;
     public static ItemBase refinedTiberium;
     public static void init() {
         //Tiberium shards and clusters
@@ -93,6 +97,9 @@ public class ModItems extends ClientProxy{
         cruentusAxe = register(new BaseAxe(BaseTool.cruentus, "cruentusAxe"));
         arboreaAxe = register(new BaseAxe(BaseTool.arborea, "arboreaAxe"));
     */  refinedTibRod = register(new ItemBase("refinedTibRod",0));
+                //Music discs
+        darkVall=register(new Record("records.DarkValley",recordDarkValley));
+        eidolon=register(new Record("records.Eidolon", recordEidolon));
     }
 
     private static <T extends Item> T register(T item) {

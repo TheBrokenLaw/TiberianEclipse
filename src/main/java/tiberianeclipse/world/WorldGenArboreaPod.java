@@ -10,6 +10,15 @@ import java.util.Random;
 
 public class WorldGenArboreaPod extends WorldGenerator {
     private final IBlockState arboreaPodState;
+    private final IBlockState fieldGrassState;
+    protected void setBlock(Random random, World world, BlockPos pos, IBlockState state2){
+        if(world.getBlockState(pos.down()).isOpaqueCube()){
+           world.setBlockState(pos.down(),state2);
+        }
+    }
+    {
+        this.fieldGrassState=ModBlocks.fieldGrass.getDefaultState();
+    }
     protected void setBlockAndAge(Random random, World world, BlockPos pos, IBlockState stateNew)
     {
         if (!world.getBlockState(pos).isOpaqueCube())
@@ -38,6 +47,7 @@ public class WorldGenArboreaPod extends WorldGenerator {
             if (worldIn.isAirBlock(blockpos) && ModBlocks.arboreaPod.canBlockStay(worldIn, blockpos, this.arboreaPodState))
             {
                 this.setBlockAndAge(rand, worldIn, blockpos, this.arboreaPodState.withProperty(ModBlocks.arboreaPod.AGE, this.randomAge(rand)));
+                this.setBlock(rand, worldIn, blockpos.down(), this.fieldGrassState);
             }
         }
 

@@ -11,8 +11,8 @@ import tiberianeclipse.block.tibcrystals.CruentusCrystal;
 import tiberianeclipse.block.tibcrystals.RipariusCrystal;
 import tiberianeclipse.block.tibcrystals.ViniferaCrystal;
 import tiberianeclipse.item.ModItems;
-import tiberianeclipse.tileentities.BlockTibPod;
 import tiberianeclipse.tileentities.TibBlockTileEntity;
+import tiberianeclipse.tileentities.TibProcessor;
 import tiberianeclipse.util.IModelProvider;
 
 public class ModBlocks extends ClientProxy {
@@ -28,9 +28,10 @@ public class ModBlocks extends ClientProxy {
     public static TiberiumGrowth viniferaPod;
     public static TiberiumGrowth cruentusPod;
     public static TiberiumGrowth arboreaPod;
-    public static BlockTibPod tibPodTest;
+    //public static BlockTibPod tibPodTest;
     public static BlockTestDrops testDrops;
     public static BlockGround fieldGrass;
+    public static TibProcessor tibProcessor;
     public static void init(){
     /*  rockRiparius = register(new BlockOre("rockRiparius", Material.ROCK, ModItems.ripariusShard, 0,4,6,3,3,0.5f));
         rockVinifera = register(new BlockOre("rockVinifera",Material.ROCK, ModItems.viniferaShard, 0,4,6,4,4,0.35f));
@@ -47,6 +48,7 @@ public class ModBlocks extends ClientProxy {
     //    tibPodTest=register(new BlockTibPod("tibPodTest",Material.ROCK, ModItems.ripariusShard, 0,3,6,1,5,.5f,true));
     //    testDrops=register(new BlockTestDrops("TestDropper",Material.ROCK, ModItems.ripariusShard, 0,3,6));
         fieldGrass=register(new BlockGround(Material.GRASS,"fieldGrass",2,4));
+        tibProcessor=register(new TibProcessor());
     }
     private static <T extends Block> T register(T block, ItemBlock itemBlock){
         GameRegistry.register(block);

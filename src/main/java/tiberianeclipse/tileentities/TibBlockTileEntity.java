@@ -8,14 +8,15 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import tiberianeclipse.block.BlockBase;
 import tiberianeclipse.block.TiberiumGrowth;
 
 import javax.annotation.Nullable;
 
-public abstract class TibBlockTileEntity<TE extends TileEntity> extends TiberiumGrowth {
+public abstract class TibBlockTileEntity<TE extends TileEntity> extends BlockBase {
 
-    public TibBlockTileEntity(String name, Material material, Item drop, int meta, int leastQuantity, int mostQuantity, float hardness, float resistance, float lightLevel, boolean whatthefuck) {
-        super(name,material,drop,meta, leastQuantity,mostQuantity,hardness, resistance,lightLevel, whatthefuck);
+    public TibBlockTileEntity(String name, Material material) {
+        super(material,name);
     }
 
     public abstract Class<TE> getTileEntityClass();

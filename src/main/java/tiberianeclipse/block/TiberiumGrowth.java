@@ -12,10 +12,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.Mirror;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.Rotation;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -27,6 +24,8 @@ import net.minecraftforge.client.model.b3d.B3DLoader;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.property.IExtendedBlockState;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import tiberianeclipse.Main;
 import tiberianeclipse.util.IModelProvider;
 
@@ -42,7 +41,7 @@ public class TiberiumGrowth extends BlockOre implements IGrowable {
   //      {
    //         return p_apply_1_ != EnumFacing.DOWN;
    //     }});
-    protected static final AxisAlignedBB TIB_AABB = new AxisAlignedBB(0.30000001192092896D, 0.0D, 0.30000001192092896D, 0.7D, 0.5D, 0.7D);
+    protected static final AxisAlignedBB TIB_AABB = new AxisAlignedBB(0.25D, 0.0D, 0.256D, 0.75D, 0.5D, 0.75D);
     public int meta;
     public float hardness;
     public float resistance;
@@ -96,12 +95,16 @@ public class TiberiumGrowth extends BlockOre implements IGrowable {
     protected int getAge(IBlockState state) {
         return ((Integer) state.getValue(this.getAgeProperty())).intValue();
     }
-
+    @Override
     public boolean isOpaqueCube(IBlockState state)
     {
         return false;
     }
-
+    @SideOnly(Side.CLIENT)
+    public BlockRenderLayer getBlockLayer()
+    {
+        return BlockRenderLayer.TRANSLUCENT;
+    }
     public boolean isFullCube(IBlockState state)
     {
         return false;
@@ -142,35 +145,48 @@ public class TiberiumGrowth extends BlockOre implements IGrowable {
     }
 
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-        int age=getAge(state);
-        if (rand.nextInt(5) == 0) {
-            int i = 30;
-            int j = 4;
 
-            for (BlockPos blockpos : BlockPos.getAllInBoxMutable(pos.add(-4, -1, -4), pos.add(4, 1, 4))) {
-                if (worldIn.getBlockState(blockpos).getBlock() == this) {
-                    --i;
+            if (rand.nextInt(5) == 0)
+            {
+                int i = 50;
+                int j = 4;
 
-                    if (i <= 0) {
-                        return;
+                for (BlockPos blockpos : BlockPos.getAllInBoxMutable(pos.add(-4, -1, -4), pos.add(4, 1, 4)))
+                {
+                    if (worldIn.getBlockState(blockpos).getBlock() == this)
+                    {
+                        --i;
+
+                        if (i <= 0)
+                        {
+                            return;
+                        }
                     }
                 }
-            }
 
-            BlockPos blockpos1 = pos.add(rand.nextInt(3) - 1, rand.nextInt(2) - rand.nextInt(2), rand.nextInt(3) - 1);
+                BlockPos blockpos1 = pos.add(rand.nextInt(3) - 1, rand.nextInt(2) - rand.nextInt(2), rand.nextInt(3) - 1);
 
-            for (int k = 0; k < 32; ++k) {
-                if (worldIn.isAirBlock(blockpos1)&&worldIn.getBlockState(pos.down())==ModBlocks.tiberiumGround.getDefaultState()||worldIn.isAirBlock(blockpos1)&&worldIn.getBlockState(pos.down())==ModBlocks.fieldGrass.getDefaultState()) {
-                    pos = blockpos1;
+                for (int k = 0; k < 4; ++k)
+                {
+                    if (worldIn.isAirBlock(blockpos1) && this.canBlockStay(worldIn, blockpos1, this.getDefaultState()))
+                    {
+                        pos = blockpos1;
+                    }
+
+                    blockpos1 = pos.add(rand.nextInt(3) - 1, rand.nextInt(2) - rand.nextInt(2), rand.nextInt(3) - 1);
                 }
 
-                blockpos1 = pos.add(rand.nextInt(3) - 1, rand.nextInt(2) - rand.nextInt(2), rand.nextInt(3) - 1);
+                if (worldIn.isAirBlock(blockpos1) && this.canBlockStay(worldIn, blockpos1, this.getDefaultState()))
+                {
+                    worldIn.setBlockState(blockpos1, this.getDefaultState(), 2);
+                }
             }
-
-            if ((worldIn.isAirBlock(blockpos1)&&worldIn.getBlockState(pos.down())==ModBlocks.tiberiumGround.getDefaultState()||worldIn.isAirBlock(blockpos1)&&worldIn.getBlockState(pos.down())==ModBlocks.fieldGrass.getDefaultState())) {
-                worldIn.setBlockState(blockpos1, this.getDefaultState(), 2);
+            for (BlockPos blockpos : BlockPos.getAllInBoxMutable(pos.add(-4, -1, -4), pos.add(4, 1, 4))) {
+                BlockPos blockPos = pos.down();
+                if (worldIn.getBlockState(blockPos) != ModBlocks.fieldGrass.getDefaultState() && worldIn.getBlockState(blockPos).isOpaqueCube()) {
+                    worldIn.setBlockState(blockPos, ModBlocks.fieldGrass.getDefaultState());
+                }
             }
-        }
 /*        int age=getAge(state);
            if (rand.nextInt(5) == 0) {
             int i = 5;
@@ -202,22 +218,21 @@ public class TiberiumGrowth extends BlockOre implements IGrowable {
         }
 
   */
-            super.updateTick(worldIn, pos, state, rand);
+                super.updateTick(worldIn, pos, state, rand);
 
-            if (worldIn.getLightFromNeighbors(pos.up()) >= 2) {
-                int k = this.getAge(state);
+                if (worldIn.getLightFromNeighbors(pos.up()) >= 2) {
+                    int k = this.getAge(state);
 
-                if (k < this.getMaxAge()) {
-                    float f = getGrowthChance(this, worldIn, pos);
+                    if (k < this.getMaxAge()) {
+                        float f = getGrowthChance(this, worldIn, pos);
 
-                    if (net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt((int) (25.0F / f) + 1) == 0)) {
-                        worldIn.setBlockState(pos, this.withAge(k + 1), 2);
-                        net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state, worldIn.getBlockState(pos));
+                        if (net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt((int) (25.0F / f) + 1) == 0)) {
+                            worldIn.setBlockState(pos, this.withAge(k + 1), 2);
+                            net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state, worldIn.getBlockState(pos));
+                        }
                     }
                 }
-            }
-
-        }
+    }
 
 
    /* public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
@@ -252,7 +267,10 @@ public class TiberiumGrowth extends BlockOre implements IGrowable {
 
 
     }
-
+    public Block.EnumOffsetType getOffsetType()
+    {
+        return Block.EnumOffsetType.XZ;
+    }
     public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state)
     {
         if (state.getBlock() == this) //Forge: This function is called during world gen and placement, before this block is set, so if we are not 'here' then assume it's the pre-check.
@@ -263,7 +281,11 @@ public class TiberiumGrowth extends BlockOre implements IGrowable {
     }
     protected boolean canSustainBush(IBlockState state) {
         return state.getBlock()==ModBlocks.tiberiumGround
-                ||state.getBlock()==ModBlocks.fieldGrass;
+                ||state.getBlock()==ModBlocks.fieldGrass
+                ||state.getBlock()==Blocks.GRASS
+                ||state.getBlock()==Blocks.DIRT
+                ||state.getBlock()==Blocks.STONE
+                ||state.getBlock()==Blocks.SAND;
     }
 
 

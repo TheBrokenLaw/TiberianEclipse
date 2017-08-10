@@ -1,0 +1,4 @@
+{
+  "records.DarkValley":{"category": "record","sounds":[{"name": "tiberianeclipse:darkVall","subtitle":"tiberianeclipse.record.recordDarkValley", "stream":true}]},
+  "records.Eidolon":{"category":"record","sounds":[{"name": "tiberianeclipse:eidolon", "subtitle":"tiberianeclipse.record.recordEidolon","stream":true}]}
+}

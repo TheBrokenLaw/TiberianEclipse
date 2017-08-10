@@ -7,6 +7,7 @@ import net.minecraft.client.renderer.ItemRenderer;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.Mod;
@@ -34,7 +35,10 @@ public class ClientProxy extends CommonProxy {
         ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(modId + ":" + name, "inventory"));
     }
 
-
+    @Override
+    public String localize(String unlocalized, Object... args) {
+        return I18n.format(unlocalized, args);
+    }
 }
 
 

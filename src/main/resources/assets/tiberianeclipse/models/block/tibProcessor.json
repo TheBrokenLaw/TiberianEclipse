@@ -1,0 +1,8 @@
+{
+    "parent": "cube_all",
+    "textures": {
+        "top": "tiberianeclipse:blocks/refinedTiberiumBlock",
+        "front": "tiberianeclipse:blocks/refinedTiberiumBlock",
+        "side": "tiberianeclipse:blocks/refinedTiberiumBlock"
+    }
+}
