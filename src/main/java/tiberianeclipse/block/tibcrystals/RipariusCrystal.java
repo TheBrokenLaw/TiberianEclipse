@@ -6,6 +6,8 @@ import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import tiberianeclipse.block.ModBlocks;
 import tiberianeclipse.block.TiberiumGrowth;
 import tiberianeclipse.item.ModItems;
 
@@ -49,7 +51,66 @@ public class RipariusCrystal extends TiberiumGrowth {
         this.setTickRandomly(true);
 
     }
+    @Override
+    public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 
+        if (rand.nextInt(10) == 0)
+        {
+            int i = 50;
+            int j = 4;
+
+            for (BlockPos blockpos : BlockPos.getAllInBoxMutable(pos.add(-4, -1, -4), pos.add(4, 1, 4)))
+            {
+                if (worldIn.getBlockState(blockpos).getBlock() == this)
+                {
+                    --i;
+
+                    if (i <= 0)
+                    {
+                        return;
+                    }
+                }
+            }
+
+            BlockPos blockpos1 = pos.add(rand.nextInt(3) - 1, rand.nextInt(2) - rand.nextInt(2), rand.nextInt(3) - 1);
+
+            for (int k = 0; k < 4; ++k)
+            {
+                if (worldIn.isAirBlock(blockpos1) && this.canBlockStay(worldIn, blockpos1, this.getDefaultState()))
+                {
+                    pos = blockpos1;
+                }
+
+                blockpos1 = pos.add(rand.nextInt(3) - 1, rand.nextInt(2) - rand.nextInt(2), rand.nextInt(3) - 1);
+            }
+
+            if (worldIn.isAirBlock(blockpos1) && this.canBlockStay(worldIn, blockpos1, this.getDefaultState()))
+            {
+                worldIn.setBlockState(blockpos1, this.getDefaultState(), 2);
+            }
+        }
+        for (BlockPos blockpos : BlockPos.getAllInBoxMutable(pos.add(-4, -1, -4), pos.add(4, 1, 4))) {
+            BlockPos blockPos = pos.down();
+            if (worldIn.getBlockState(blockPos) != ModBlocks.fieldGrass.getDefaultState() && worldIn.getBlockState(blockPos).isOpaqueCube()) {
+                worldIn.setBlockState(blockPos, ModBlocks.fieldGrass.getDefaultState());
+
+            }
+        }
+        super.updateTick(worldIn, pos, state, rand);
+
+        if (worldIn.getLightFromNeighbors(pos.up()) >= 2) {
+            int k = this.getAge(state);
+
+            if (k < this.getMaxAge()) {
+                float f = getGrowthChance(this, worldIn, pos);
+
+                if (net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt((int) (50F / f) + 1) == 0)) {
+                    worldIn.setBlockState(pos, this.withAge(k + 1), 2);
+                    net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state, worldIn.getBlockState(pos));
+                }
+            }
+        }
+    }
     @Override
     public Item getItemDropped(IBlockState blockstate, Random random, int fortune) {
         return ModItems.ripariusShard;

@@ -182,10 +182,15 @@ public class TiberiumGrowth extends BlockOre implements IGrowable {
                 }
             }
             for (BlockPos blockpos2 : BlockPos.getAllInBoxMutable(pos.add(rand.nextInt(2), -1, rand.nextInt(2)), pos.add(rand.nextInt(2), 1, rand.nextInt(2)))) {
-                BlockPos blockPos = blockpos2.down();
-                if (worldIn.getBlockState(blockPos) != ModBlocks.fieldGrass.getDefaultState() && worldIn.getBlockState(blockPos).isOpaqueCube()) {
+                BlockPos blockPos = pos.down();
+                if (worldIn.getBlockState(blockPos) != ModBlocks.fieldGrass.getDefaultState() && worldIn.getBlockState(blockPos)==Blocks.GRASS
+                        ||worldIn.getBlockState(blockPos) != ModBlocks.fieldGrass.getDefaultState() && worldIn.getBlockState(blockPos)==Blocks.STONE||
+                        worldIn.getBlockState(blockPos) != ModBlocks.fieldGrass.getDefaultState() && worldIn.getBlockState(blockPos)==Blocks.DIRT) {
                     worldIn.setBlockState(blockPos, ModBlocks.fieldGrass.getDefaultState());
 
+                }
+                if(worldIn.getBlockState(pos.up())==Blocks.LOG.getDefaultState()&&worldIn.getBlockState(pos.up())!=ModBlocks.tibMutLog.getDefaultState()||worldIn.getBlockState(pos.up())==Blocks.LOG2.getDefaultState()&&worldIn.getBlockState(blockpos2)!=ModBlocks.tibMutLog.getDefaultState()){
+                    worldIn.setBlockState(pos.up(),ModBlocks.tibMutLog.getDefaultState());
                 }
             }
 /*        int age=getAge(state);

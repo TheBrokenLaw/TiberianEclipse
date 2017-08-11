@@ -22,13 +22,14 @@ import tiberianeclipse.util.IModelProvider;
 public class BlockBase extends Block implements IModelProvider {
     protected String name;
     public Material material;
-    public BlockBase(Material material, String name) {
+    public BlockBase(Material material, String name, String tool, int level) {
         super(material);
         this.name = name;
         setUnlocalizedName(name);
         setRegistryName(name);
         this.material=material;
         setCreativeTab(Main.creativeTab);
+        setHarvestLevel(tool, level);
     }
 
     @Override

@@ -1,0 +1,11 @@
+{
+    "variants": {
+        "normal": {
+            "model": "tiberianeclipse:tibMutLog"
+        },
+        "axis=y":    { "model": "tiberianeclipse:tibMutLog" },
+        "axis=z":     { "model": "tiberianeclipse:tibMutLog", "x": 90 },
+        "axis=x":     { "model": "tiberianeclipse:tibMutLog", "x": 90, "y": 90 },
+        "axis=none":   { "model": "tiberianeclipse:tibMutLog" }
+    }
+}

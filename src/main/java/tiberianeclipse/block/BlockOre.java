@@ -18,11 +18,11 @@ public class BlockOre extends BlockBase {
     public int mostQuantity;
     public float setLightLevel;
     protected BlockOre(String name, Material material, Item drop, int meta, int leastQuantity, int mostQuantity, float hardness, float resistance, float setLightLevel) {
-        super(material, name);
+        super(material, name, "pickaxe", 5);
         this.drop = drop;
         this.meta = meta;
         this.material=material;
-        this.setHarvestLevel("pickaxe",0);
+  //      this.setHarvestLevel("pickaxe",0);
         this.leastQuantity = leastQuantity;
         this.mostQuantity = mostQuantity;
         this.setHardness(hardness);

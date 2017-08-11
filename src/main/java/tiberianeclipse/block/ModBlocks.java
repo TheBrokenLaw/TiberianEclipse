@@ -32,6 +32,7 @@ public class ModBlocks extends ClientProxy {
     public static BlockTestDrops testDrops;
     public static BlockGround fieldGrass;
     public static TibProcessor tibProcessor;
+    public static MutatedLog tibMutLog;
     //public static BlockProcessor blockProcessor;
     public static void init(){
     /*  rockRiparius = register(new BlockOre("rockRiparius", Material.ROCK, ModItems.ripariusShard, 0,4,6,3,3,0.5f));
@@ -39,7 +40,7 @@ public class ModBlocks extends ClientProxy {
         rockCruentus = register(new BlockOre("rockCruentus",Material.ROCK, ModItems.cruentusShard,0,4,6,5,5, 0.25f));
         rockArborea = register(new BlockOre("RockArborea",Material.ROCK, ModItems.arboreaShard,0,4,6,6,6,0.10f));
         greenTibBush = register(new TiberiumGrowth("greenTibBush",Material.ROCK, ModItems.ripariusShard, 0,1,3, 6,1,3, 0.25f, true));
-     */ refinedTiberiumBlock = register(new BlockBase(Material.ROCK,"refinedTiberiumBlock"));
+     */ refinedTiberiumBlock = register(new BlockBase(Material.ROCK,"refinedTiberiumBlock", "pickaxe", 5));
         viniferaPod= register(new ViniferaCrystal("viniferaPod",Material.ROCK,ModItems.viniferaShard,0,3,6,1,1,.45f,true));
         cruentusPod= register(new CruentusCrystal("cruentusPod",Material.ROCK,ModItems.cruentusShard,0,3,6,1,1,.45f,true));
         arboreaPod= register(new ArboreaCrystal("arboreaPod",Material.ROCK,ModItems.arboreaShard,0,3,6,1,1,.45f,true));
@@ -50,6 +51,7 @@ public class ModBlocks extends ClientProxy {
     //    testDrops=register(new BlockTestDrops("TestDropper",Material.ROCK, ModItems.ripariusShard, 0,3,6));
         fieldGrass=register(new BlockGround(Material.GRASS,"fieldGrass",2,4));
         tibProcessor=register(new TibProcessor());
+        tibMutLog=register(new MutatedLog("tibMutLog"));
     //    blockProcessor=register(new BlockProcessor());
     }
     private static <T extends Block> T register(T block, ItemBlock itemBlock){
