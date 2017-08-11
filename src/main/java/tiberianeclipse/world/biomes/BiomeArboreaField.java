@@ -10,11 +10,17 @@ import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import tiberianeclipse.block.ModBlocks;
 import tiberianeclipse.world.WorldGenArboreaPod;
+import tiberianeclipse.world.WorldGenCruentusPod;
+import tiberianeclipse.world.WorldGenRipariusPod;
+import tiberianeclipse.world.WorldGenViniferaPod;
 
 import java.util.Random;
 
 public class BiomeArboreaField extends Biome {
     public static WorldGenerator arboreaPod =new WorldGenArboreaPod();
+    public static WorldGenerator cruentusPod =new WorldGenCruentusPod();
+    public static WorldGenerator viniferaPod =new WorldGenViniferaPod();
+    public static WorldGenerator ripariusPod =new WorldGenRipariusPod();
     protected int arboreaPodPerChunk;
     public static BiomeProperties properties=new BiomeProperties("Arborea Field");
    public BlockPos chunkPos;
@@ -22,8 +28,9 @@ public class BiomeArboreaField extends Biome {
 
     public BiomeArboreaField() {
         super(properties);
-        this.theBiomeDecorator.treesPerChunk = -100;
-        this.theBiomeDecorator.grassPerChunk = 64;
+        this.theBiomeDecorator.treesPerChunk = 32;
+        this.theBiomeDecorator.grassPerChunk = 16;
+        this.theBiomeDecorator.flowersPerChunk=64;
         this.topBlock =Blocks.GRASS.getDefaultState();
         this.spawnableMonsterList.clear();
         this.spawnableCreatureList.clear();
@@ -55,7 +62,7 @@ public class BiomeArboreaField extends Biome {
             if (height < 1) height = 1;
             int k = rand.nextInt(height);
 
-            arboreaPod.generate(worldIn, rand, pos.add(i, k, j));
+            viniferaPod.generate(worldIn, rand, pos.add(i, k, j));
         }
         else if(TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.TREE))
         {
@@ -66,7 +73,7 @@ public class BiomeArboreaField extends Biome {
             if (height < 1) height = 1;
             int k = rand.nextInt(height);
 
-            arboreaPod.generate(worldIn, rand, pos.add(i, k, j));
+            cruentusPod.generate(worldIn, rand, pos.add(i, k, j));
         }
     }
     public void genTerrainBlocks(World world, Random rand, ChunkPrimer chunkPrimer, int x, int z, double noiseVal){

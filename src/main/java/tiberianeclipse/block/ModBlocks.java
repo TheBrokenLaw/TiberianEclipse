@@ -32,6 +32,7 @@ public class ModBlocks extends ClientProxy {
     public static BlockTestDrops testDrops;
     public static BlockGround fieldGrass;
     public static TibProcessor tibProcessor;
+    //public static BlockProcessor blockProcessor;
     public static void init(){
     /*  rockRiparius = register(new BlockOre("rockRiparius", Material.ROCK, ModItems.ripariusShard, 0,4,6,3,3,0.5f));
         rockVinifera = register(new BlockOre("rockVinifera",Material.ROCK, ModItems.viniferaShard, 0,4,6,4,4,0.35f));
@@ -49,6 +50,7 @@ public class ModBlocks extends ClientProxy {
     //    testDrops=register(new BlockTestDrops("TestDropper",Material.ROCK, ModItems.ripariusShard, 0,3,6));
         fieldGrass=register(new BlockGround(Material.GRASS,"fieldGrass",2,4));
         tibProcessor=register(new TibProcessor());
+    //    blockProcessor=register(new BlockProcessor());
     }
     private static <T extends Block> T register(T block, ItemBlock itemBlock){
         GameRegistry.register(block);

@@ -10,11 +10,13 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import tiberianeclipse.block.ModBlocks;
 import tiberianeclipse.world.WorldGenRipariusPod;
+import tiberianeclipse.world.WorldGenViniferaPod;
 
 import java.util.Random;
 
 public class BiomeRipariusField extends Biome {
     public static WorldGenerator ripariusPod =new WorldGenRipariusPod();
+    public static WorldGenerator viniferaPod =new WorldGenViniferaPod();
     protected int ripariusPodPerChunk;
     public static BiomeProperties properties=new BiomeProperties("Riparius Field");
    public BlockPos chunkPos;
@@ -22,8 +24,9 @@ public class BiomeRipariusField extends Biome {
 
     public BiomeRipariusField() {
         super(properties);
-        this.theBiomeDecorator.treesPerChunk = -100;
+        this.theBiomeDecorator.treesPerChunk = 2;
         this.theBiomeDecorator.grassPerChunk = 64;
+        this.theBiomeDecorator.flowersPerChunk=64;
         this.topBlock = Blocks.GRASS.getDefaultState();
         this.spawnableMonsterList.clear();
         this.spawnableCreatureList.clear();
@@ -47,7 +50,7 @@ public class BiomeRipariusField extends Biome {
             ripariusPod.generate(worldIn, rand, pos.add(i, k, j));
         }
        else if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.FLOWERS))
-        {
+       {
 
             int i = rand.nextInt(32) + 8;
             int j = rand.nextInt(32) + 8;
@@ -66,7 +69,7 @@ public class BiomeRipariusField extends Biome {
             if (height < 1) height = 1;
             int k = rand.nextInt(height);
 
-            ripariusPod.generate(worldIn, rand, pos.add(i, k, j));
+            viniferaPod.generate(worldIn, rand, pos.add(i, k, j));
         }
     }
     public void genTerrainBlocks(World world, Random rand, ChunkPrimer chunkPrimer, int x, int z, double noiseVal){

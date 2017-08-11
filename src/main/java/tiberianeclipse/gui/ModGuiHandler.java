@@ -13,6 +13,7 @@ import tiberianeclipse.tileentities.TileEntityTibProcessor;
 public class ModGuiHandler implements IGuiHandler {
     public static final int TIBPROCESSOR=0;
 
+
     @Override
     public Container getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z){
         switch (ID){
@@ -21,6 +22,7 @@ public class ModGuiHandler implements IGuiHandler {
                 default:
                     return null;
         }
+
     }
     @Override
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z){

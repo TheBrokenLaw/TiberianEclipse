@@ -10,6 +10,8 @@ import java.util.Random;
 
 public class WorldGenViniferaPod extends WorldGenerator {
     private final IBlockState viniferaPodState;
+    private final IBlockState ripariusPodState;
+
     private final IBlockState fieldGrassState;
     protected void setBlock(Random random, World world, BlockPos pos, IBlockState state2){
         if(world.getBlockState(pos.down()).isOpaqueCube()){
@@ -30,6 +32,9 @@ public class WorldGenViniferaPod extends WorldGenerator {
     {
         this.viniferaPodState = ModBlocks.viniferaPod.getDefaultState();
     }
+    {
+        this.ripariusPodState = ModBlocks.ripariusPod.getDefaultState();
+    }
 
     public boolean generate(World worldIn, Random rand, BlockPos position)
     {
@@ -49,7 +54,14 @@ public class WorldGenViniferaPod extends WorldGenerator {
                 this.setBlockAndAge(rand, worldIn, blockpos, this.viniferaPodState.withProperty(ModBlocks.viniferaPod.AGE, this.randomAge(rand)));
                 this.setBlock(rand, worldIn, blockpos.down(), this.fieldGrassState);
             }
+            BlockPos blockpos1 = position.add(rand.nextInt(16) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(16) - rand.nextInt(8));
+            if (worldIn.isAirBlock(blockpos1) && ModBlocks.ripariusPod.canBlockStay(worldIn, blockpos1, this.ripariusPodState))
+            {
+                this.setBlockAndAge(rand, worldIn, blockpos1, this.ripariusPodState.withProperty(ModBlocks.ripariusPod.AGE, this.randomAge(rand)));
+                this.setBlock(rand, worldIn, blockpos1.down(), this.fieldGrassState);
+            }
         }
+
 
         return true;
     }

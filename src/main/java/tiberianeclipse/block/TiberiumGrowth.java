@@ -181,10 +181,11 @@ public class TiberiumGrowth extends BlockOre implements IGrowable {
                     worldIn.setBlockState(blockpos1, this.getDefaultState(), 2);
                 }
             }
-            for (BlockPos blockpos : BlockPos.getAllInBoxMutable(pos.add(-4, -1, -4), pos.add(4, 1, 4))) {
-                BlockPos blockPos = pos.down();
+            for (BlockPos blockpos2 : BlockPos.getAllInBoxMutable(pos.add(rand.nextInt(2), -1, rand.nextInt(2)), pos.add(rand.nextInt(2), 1, rand.nextInt(2)))) {
+                BlockPos blockPos = blockpos2.down();
                 if (worldIn.getBlockState(blockPos) != ModBlocks.fieldGrass.getDefaultState() && worldIn.getBlockState(blockPos).isOpaqueCube()) {
                     worldIn.setBlockState(blockPos, ModBlocks.fieldGrass.getDefaultState());
+
                 }
             }
 /*        int age=getAge(state);
