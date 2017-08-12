@@ -9,21 +9,23 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import tiberianeclipse.block.ModBlocks;
+import tiberianeclipse.world.WorldGenMutatedTree;
 import tiberianeclipse.world.WorldGenRipariusPod;
 import tiberianeclipse.world.WorldGenViniferaPod;
 
 import java.util.Random;
 
-public class BiomeRipariusField extends Biome {
+public class BiomeRipariusField extends ModBiome {
     public static WorldGenerator ripariusPod =new WorldGenRipariusPod();
     public static WorldGenerator viniferaPod =new WorldGenViniferaPod();
-    protected int ripariusPodPerChunk;
+    public static WorldGenerator tibMutTree=new WorldGenMutatedTree(true, true);
     public static BiomeProperties properties=new BiomeProperties("Riparius Field");
    public BlockPos chunkPos;
 
 
     public BiomeRipariusField() {
         super(properties);
+        this.theModBiomeDecorator.mushroomsPerChunk=2;
         this.theBiomeDecorator.treesPerChunk = 2;
         this.theBiomeDecorator.grassPerChunk = 64;
         this.theBiomeDecorator.flowersPerChunk=64;
@@ -31,13 +33,23 @@ public class BiomeRipariusField extends Biome {
         this.spawnableMonsterList.clear();
         this.spawnableCreatureList.clear();
         this.spawnableWaterCreatureList.clear();
-        this.ripariusPodPerChunk=64;
         this.fillerBlock=Blocks.DIRT.getDefaultState();
 
     }
 
     @Override
     public void decorate(World worldIn, Random rand, BlockPos pos) {
+        if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.SHROOM))
+        {
+
+            int i = rand.nextInt(32) + 8;
+            int j = rand.nextInt(32) + 8;
+            int height = worldIn.getHeight(pos.add(i, 0, j)).getY() * 2;
+            if (height < 1) height = 1;
+            int k = rand.nextInt(height);
+
+            tibMutTree.generate(worldIn, rand, pos.add(i, k, j));
+        }
         if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.GRASS))
         {
 

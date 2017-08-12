@@ -51,8 +51,8 @@ public class ModItems extends ClientProxy{
     public static BaseAxe cruentusAxe;
     public static BaseAxe arboreaAxe;
 */        //Music Discs
-    public static Record darkVall;
-    public static Record eidolon;
+    public static ItemRecordDarkValley recordDarkValley;
+    public static ItemRecordEidolon recordEidolon;
     public static ItemBase refinedTiberium;
     public static void init() {
         //Tiberium shards and clusters
@@ -98,8 +98,8 @@ public class ModItems extends ClientProxy{
         arboreaAxe = register(new BaseAxe(BaseTool.arborea, "arboreaAxe"));
     */  refinedTibRod = register(new ItemBase("refinedTibRod",0));
                 //Music discs
-        darkVall=register(new Record("records.DarkValley",recordDarkValley));
-        eidolon=register(new Record("records.Eidolon", recordEidolon));
+        recordDarkValley=new ItemRecordDarkValley();
+         recordEidolon=new ItemRecordEidolon();
     }
 
     private static <T extends Item> T register(T item) {

@@ -1,8 +1,6 @@
 package tiberianeclipse;
 
 
-import net.minecraftforge.common.config.Config;
-import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -17,7 +15,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import tiberianeclipse.recipes.ModRecipes;
 import tiberianeclipse.util.EclipseTab;
 import tiberianeclipse.world.ModWorldGen;
-import tiberianeclipse.world.biomes.ModBiome;
+import tiberianeclipse.world.biomes.ModBiomeManager;
 
 @Mod(modid = Main.modId, name = Main.name, version = Main.version, acceptedMinecraftVersions = "[1.10.2]")
 public class Main {
@@ -38,9 +36,10 @@ public class Main {
     public void preInit(FMLPreInitializationEvent event) {
         ModItems.init();
         ModBlocks.init();
-        GameRegistry.registerWorldGenerator(new ModWorldGen(), 3);
-        ModBiome.registerBiomes();
+        GameRegistry.registerWorldGenerator(new ModWorldGen(), 50);
+        ModBiomeManager.registerBiomes();
         NetworkRegistry.INSTANCE.registerGuiHandler(this,new ModGuiHandler());
+
     }
 
     @Mod.EventHandler

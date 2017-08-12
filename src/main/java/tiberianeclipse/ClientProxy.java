@@ -24,11 +24,13 @@ public class ClientProxy extends CommonProxy {
 
 
     @Override
+
     public void preInit(FMLPreInitializationEvent e) {
         super.preInit(e);
         ModItems.init();
         ModBlocks.init();
         ModEntities.init();
+
     }
 
     public void registerItemRenderer(Item item, int meta, String name) {
