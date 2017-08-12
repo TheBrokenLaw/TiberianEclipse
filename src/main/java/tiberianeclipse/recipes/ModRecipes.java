@@ -30,7 +30,7 @@ public class ModRecipes{
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.cruArborCluster, 1), new Object[] {new ItemStack(ModItems.cruentusShard, 1), new ItemStack(ModItems.cruentusShard, 1), new ItemStack(ModItems.arboreaShard, 1)});
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.arborCruCluster, 1), new Object[] {new ItemStack(ModItems.arboreaShard, 1), new ItemStack(ModItems.arboreaShard, 1), new ItemStack(ModItems.cruentusShard, 1)});
         //Blocks
-        //#DOES NOT WORK GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.refinedTiberiumBlock, 4),ModItems.refinedTiberium, 4);
+        GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.refinedTiberiumBlock, 1),new Object[]{new ItemStack(ModItems.refinedTiberium,3),new ItemStack(ModItems.refinedTiberium,3),new ItemStack(ModItems.refinedTiberium,3),new ItemStack(ModItems.refinedTiberium,3)});
         //Refining Tiberium Varieties
         GameRegistry.addSmelting(ModItems.ripariusShard, new ItemStack(ModItems.refinedTiberium), 0.7f);
         GameRegistry.addSmelting(ModItems.viniferaShard, new ItemStack(ModItems.refinedTiberium, 2), 0.8f);
@@ -62,6 +62,10 @@ public class ModRecipes{
         GameRegistry.addShapedRecipe(new ItemStack(ModItems.refTibSword), new Object[]{" R "," R "," B ", 'R', ModItems.refinedTiberium,'B',ModItems.refinedTibRod});
         GameRegistry.addShapedRecipe(new ItemStack(ModItems.refTibPick), new Object[]{"RRR"," B "," B ", 'R', ModItems.refinedTiberium,'B',ModItems.refinedTibRod});
         GameRegistry.addShapedRecipe(new ItemStack(ModItems.refTibAxe), new Object[]{"RR ","RB "," B ", 'R', ModItems.refinedTiberium,'B',ModItems.refinedTibRod});
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.basicChest), new Object[]{"R R","RBR","RRR", 'R', ModItems.refinedTiberium,'B',Items.IRON_INGOT});
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.basicFeet), new Object[]{"R R","R R","   ", 'R', ModItems.refinedTiberium});
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.basicHelm), new Object[]{"RBR","R R","   ", 'R', ModItems.refinedTiberium,'B',Items.IRON_INGOT});
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.basicLegs), new Object[]{"RBR","R R","R R", 'R', ModItems.refinedTiberium,'B',Items.IRON_INGOT});
         GameRegistry.addShapedRecipe(new ItemStack(ModItems.refTibShovel), new Object[]{" R "," B "," B ", 'R', ModItems.refinedTiberium,'B',ModItems.refinedTibRod});
     }
 

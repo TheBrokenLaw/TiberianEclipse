@@ -6,12 +6,16 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
 import tiberianeclipse.container.TibProcessorContainer;
+import tiberianeclipse.machine.BlockGrinder;
+import tiberianeclipse.machine.ContainerGrinder;
+import tiberianeclipse.machine.TileEntityGrinder;
 import tiberianeclipse.tileentities.TibBlockTileEntity;
 import tiberianeclipse.tileentities.TileEntityTibProcessor;
 
 
 public class ModGuiHandler implements IGuiHandler {
     public static final int TIBPROCESSOR=0;
+    public static final int GRINDER=1;
 
 
     @Override
@@ -21,6 +25,8 @@ public class ModGuiHandler implements IGuiHandler {
                 return new TibProcessorContainer(player.inventory, (TileEntityTibProcessor)world.getTileEntity(new BlockPos(x,y,z)));
                 default:
                     return null;
+
+
         }
 
     }

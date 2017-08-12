@@ -1,4 +1,5 @@
 package tiberianeclipse.item;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import tiberianeclipse.ClientProxy;
@@ -53,6 +54,11 @@ public class ModItems extends ClientProxy{
 */        //Music Discs
     public static ItemRecordDarkValley recordDarkValley;
     public static ItemRecordEidolon recordEidolon;
+        //Armor
+    public static ModArmor basicHelm;
+    public static ModArmor basicChest;
+    public static ModArmor basicLegs;
+    public static ModArmor basicFeet;
     public static ItemBase refinedTiberium;
     public static void init() {
         //Tiberium shards and clusters
@@ -98,8 +104,14 @@ public class ModItems extends ClientProxy{
         arboreaAxe = register(new BaseAxe(BaseTool.arborea, "arboreaAxe"));
     */  refinedTibRod = register(new ItemBase("refinedTibRod",0));
                 //Music discs
-        recordDarkValley=new ItemRecordDarkValley();
-         recordEidolon=new ItemRecordEidolon();
+   //     recordDarkValley=new ItemRecordDarkValley();
+   //      recordEidolon=new ItemRecordEidolon();
+                //Armor
+        basicChest=register(new ModArmor("basicChest",ArmorBase.basic, EntityEquipmentSlot.CHEST));
+        basicHelm=register(new ModArmor("basicHelm",ArmorBase.basic, EntityEquipmentSlot.HEAD ));
+        basicLegs=register(new ModArmor("basicLegs",ArmorBase.basic, EntityEquipmentSlot.LEGS));
+        basicFeet=register(new ModArmor( "basicFeet",ArmorBase.basic, EntityEquipmentSlot.FEET));
+
     }
 
     private static <T extends Item> T register(T item) {

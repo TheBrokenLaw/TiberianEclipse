@@ -22,12 +22,17 @@ item.refTibPick.name=Refined Tiberium Pickaxe
 item.refTibAxe.name=Refined Tiberium Axe
 item.refTibShovel.name=Refined Tiberium Shovel
 item.refTibSword.name=Refined Tiberium Sword
-item.refinedTibRod=Refined Tiberium Rod
+item.refinedTibRod.name=Refined Tiberium Rod
+item.basicHelm.name=Refined Tiberium Helmet
+item.basicChest.name=Refined Tiberium Chestplate
+item.basicLegs.name=Refined Tiberium Leggings
+item.basicFeet.name=Refined Tiberium Boots
 # Blocks
 tile.rockRiparius.name=Riparius Stone
 tile.rockVinifera.name=Vinifera Stone
 tile.rockCruentus.name=Cruentus Stone
 tile.rockArborea.name=Arborea Stone
+tile.refinedTiberiumBlock.name=Refined Tiberium Block
 tile.greenTibBush.name=Riparius Crystal
 tile.tibProcessor.name=Rudimentary Tiberium Processor
 # Misc

@@ -11,6 +11,7 @@ import tiberianeclipse.block.tibcrystals.CruentusCrystal;
 import tiberianeclipse.block.tibcrystals.RipariusCrystal;
 import tiberianeclipse.block.tibcrystals.ViniferaCrystal;
 import tiberianeclipse.item.ModItems;
+import tiberianeclipse.machine.BlockGrinder;
 import tiberianeclipse.tileentities.TibBlockTileEntity;
 import tiberianeclipse.tileentities.TibProcessor;
 import tiberianeclipse.util.IModelProvider;
@@ -33,6 +34,7 @@ public class ModBlocks extends ClientProxy {
     public static BlockGround fieldGrass;
     public static TibProcessor tibProcessor;
     public static MutatedLog tibMutLog;
+    public static BlockGrinder blockGrinder;
     //public static BlockProcessor blockProcessor;
     public static void init(){
     /*  rockRiparius = register(new BlockOre("rockRiparius", Material.ROCK, ModItems.ripariusShard, 0,4,6,3,3,0.5f));
@@ -52,6 +54,7 @@ public class ModBlocks extends ClientProxy {
         fieldGrass=register(new BlockGround(Material.GRASS,"fieldGrass",2,4));
         tibProcessor=register(new TibProcessor());
         tibMutLog=register(new MutatedLog("tibMutLog"));
+//        blockGrinder=register(new BlockGrinder());
     //    blockProcessor=register(new BlockProcessor());
     }
     private static <T extends Block> T register(T block, ItemBlock itemBlock){
