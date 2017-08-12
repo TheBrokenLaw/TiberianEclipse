@@ -25,8 +25,17 @@ public class ModItems extends ClientProxy{
     public static ItemBase cruVinCluster;
     public static ItemBase cruArborCluster;
     public static ItemBase arborCruCluster;
+    public static ItemBase ripDustedIron;
+    public static ItemBase ripDustedGold;
+    public static ItemBase vinDustedIron;
+    public static ItemBase vinDustedGold;
+    public static ItemBase cruDustedIron;
+    public static ItemBase cruDustedGold;
+    public static ItemBase arbDustedIron;
+    public static ItemBase arbDustedGold;
     //Tools
     public static ItemBase refinedTibRod;
+    public static ItemBase tibHammer;
         //Swords
     public static BaseSword refTibSword;
     public static BaseSword ripariusBlade;
@@ -54,6 +63,11 @@ public class ModItems extends ClientProxy{
 */        //Music Discs
     public static ItemRecordDarkValley recordDarkValley;
     public static ItemRecordEidolon recordEidolon;
+        //Intermediate Items
+    public static ItemBase crushedRiparius;
+    public static ItemBase crushedVinifera;
+    public static ItemBase crushedCruentus;
+    public static ItemBase crushedArborea;
         //Armor
     public static ModArmor basicHelm;
     public static ModArmor basicChest;
@@ -77,7 +91,13 @@ public class ModItems extends ClientProxy{
         cruArborCluster =register(new ItemBase("cruArborCluster",0));
         arborCruCluster = register(new ItemBase("arborCruCluster",0));
         refinedTiberium = register(new ItemBase("refinedTiberium",0));
+        crushedRiparius=register(new ItemBase("crushedRiparius",0));
+        crushedVinifera=register(new ItemBase("crushedVinifera",0));
+        crushedCruentus=register(new ItemBase("crushedCruentus",0));
+        crushedArborea=register(new ItemBase("crushedArborea",0));
+
         //Tiberium Tools
+        tibHammer=register(new TibHammer());
             //Swords
         refTibSword=register(new BaseSword(BaseTool.refinedTibMaterial,"refTibSword"));
         ripariusBlade = register(new BaseSword(BaseTool.riparius, "ripariusBlade"));
@@ -111,7 +131,15 @@ public class ModItems extends ClientProxy{
         basicHelm=register(new ModArmor("basicHelm",ArmorBase.basic, EntityEquipmentSlot.HEAD ));
         basicLegs=register(new ModArmor("basicLegs",ArmorBase.basic, EntityEquipmentSlot.LEGS));
         basicFeet=register(new ModArmor( "basicFeet",ArmorBase.basic, EntityEquipmentSlot.FEET));
-
+                //Misc
+        ripDustedIron=register(new ItemBase("ripDustedIron", 0));
+        ripDustedGold=register(new ItemBase("ripDustedGold", 0));
+        vinDustedIron=register(new ItemBase("vinDustedIron", 0));
+        vinDustedGold=register(new ItemBase("vinDustedGold", 0));
+        cruDustedIron=register(new ItemBase("cruDustedIron", 0));
+        cruDustedGold=register(new ItemBase("cruDustedGold", 0));
+        arbDustedIron=register(new ItemBase("arbDustedIron", 0));
+        arbDustedGold=register(new ItemBase("arbDustedGold", 0));
     }
 
     private static <T extends Item> T register(T item) {
