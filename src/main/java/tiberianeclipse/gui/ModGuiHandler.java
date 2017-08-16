@@ -6,10 +6,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
 import tiberianeclipse.container.TibProcessorContainer;
-import tiberianeclipse.machine.BlockGrinder;
-import tiberianeclipse.machine.ContainerGrinder;
-import tiberianeclipse.machine.TileEntityGrinder;
-import tiberianeclipse.tileentities.TibBlockTileEntity;
 import tiberianeclipse.tileentities.TileEntityTibProcessor;
 
 

@@ -1,12 +1,10 @@
 package tiberianeclipse.item;
 
-import net.minecraft.client.audio.SoundHandler;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraftforge.common.util.EnumHelper;
 import tiberianeclipse.Main;
-import tiberianeclipse.sounds.TESoundHandler;
 
 public class ArmorBase extends ItemBase{
     public String name;

@@ -8,7 +8,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
@@ -17,7 +16,7 @@ import tiberianeclipse.gui.ModGuiHandler;
 
 import javax.annotation.Nullable;
 
-public class TibProcessor extends TibBlockTileEntity<TileEntityTibProcessor> {
+public class TibProcessor extends BaseTileEntity<TileEntityTibProcessor> {
     public TibProcessor(){
         super("tibProcessor", Material.ROCK);
     }

@@ -1,0 +1,44 @@
+{
+  "rainnite":{
+    "category":"music",
+    "sounds":[
+      "tiberianeclipse:music/rainnite"
+    ],
+    "subtitle":"subtitle.tiberianeclipse.rainnite", "stream":"true"
+  },
+  "whatlurk":{
+    "category":"music",
+    "sounds":[
+      "tiberianeclipse:music/whatlurk"
+    ],
+    "subtitle":"subtitle.tiberianeclipse.whatlurk", "stream":"true"
+  },
+  "floatmov":{
+    "category":"neutral",
+    "sounds":[
+      "tiberianeclipse:music/floatmov"
+    ],
+    "subtitle":"subtitle.tiberianeclipse.floatmov", "stream":"true"
+  },
+  "floatmov2":{
+    "category":"neutral",
+    "sounds":[
+      "tiberianeclipse:music/floatmov2"
+    ],
+    "subtitle":"subtitle.tiberianeclipse.floatmov2", "stream":"true"
+  },
+  "floatmov3":{
+    "category":"neutral",
+    "sounds":[
+      "tiberianeclipse:music/floatmov3"
+    ],
+    "subtitle":"subtitle.tiberianeclipse.floatmov3", "stream":"true"
+  },
+  "floatmov4":{
+    "category":"neutral",
+    "sounds":[
+      "tiberianeclipse:music/floatmov4"
+    ],
+    "subtitle":"subtitle.tiberianeclipse.floatmov4", "stream":"true"
+  }
+}

@@ -13,9 +13,9 @@ import tiberianeclipse.block.TiberiumGrowth;
 
 import javax.annotation.Nullable;
 
-public abstract class TibBlockTileEntity<TE extends TileEntity> extends BlockBase {
+public abstract class BaseTileEntity<TE extends TileEntity> extends BlockBase {
 
-    public TibBlockTileEntity(String name, Material material) {
+    public BaseTileEntity(String name, Material material) {
         super(material,name, "pickaxe", 0);
     }
 

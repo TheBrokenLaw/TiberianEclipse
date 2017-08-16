@@ -30,25 +30,13 @@ public class MutatedLog extends BlockBase {
     {
         if (!worldIn.isRemote)
         {
-            if (worldIn.getLightFromNeighbors(pos.up()) < 4 && worldIn.getBlockState(pos.up()).getLightOpacity(worldIn, pos.up()) > 2)
             {
-                worldIn.setBlockState(pos, this.getDefaultState());
-            }
-            else
-            {
-                if (worldIn.getLightFromNeighbors(pos.up()) >= 9)
-                {
+
                     for (int i = 0; i < 4; ++i)
                     {
-                        BlockPos blockpos = pos.add(rand.nextInt(3) - 1, rand.nextInt(10) - 3, rand.nextInt(3) - 1);
+                        BlockPos blockpos = pos.up();
 
-                        if (blockpos.getY() >= 0 && blockpos.getY() < 256 && !worldIn.isBlockLoaded(blockpos))
-                        {
-                            return;
-                        }
-
-                        IBlockState iblockstate = worldIn.getBlockState(blockpos.up());
-                        IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+                        IBlockState iblockstate = worldIn.getBlockState(blockpos);
 
                         if (iblockstate.getBlock()==Blocks.LOG2||iblockstate.getBlock() == Blocks.LOG2)
                         {
@@ -59,4 +47,3 @@ public class MutatedLog extends BlockBase {
             }
         }
     }
-}

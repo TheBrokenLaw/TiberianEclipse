@@ -146,9 +146,9 @@ public class TiberiumGrowth extends BlockOre implements IGrowable {
 
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 
-            if (rand.nextInt(5) == 0)
+            if (rand.nextInt(10) == 0)
             {
-                int i = 50;
+                int i = 16;
                 int j = 4;
 
                 for (BlockPos blockpos : BlockPos.getAllInBoxMutable(pos.add(-4, -1, -4), pos.add(4, 1, 4)))
@@ -180,8 +180,11 @@ public class TiberiumGrowth extends BlockOre implements IGrowable {
                 {
                     worldIn.setBlockState(blockpos1, this.getDefaultState(), 2);
                 }
+                if(worldIn.getBlockState(blockpos1.up())==Blocks.LOG.getDefaultState()&&worldIn.getBlockState(blockpos1.up())!=ModBlocks.tibMutLog.getDefaultState()||worldIn.getBlockState(blockpos1.up())==Blocks.LOG2.getDefaultState()&&worldIn.getBlockState(blockpos1)!=ModBlocks.tibMutLog.getDefaultState()){
+                    worldIn.setBlockState(blockpos1.up(),ModBlocks.tibMutLog.getDefaultState());
+                }
             }
-            for (BlockPos blockpos2 : BlockPos.getAllInBoxMutable(pos.add(rand.nextInt(2), -1, rand.nextInt(2)), pos.add(rand.nextInt(2), 1, rand.nextInt(2)))) {
+            for (BlockPos blockpos2 : BlockPos.getAllInBoxMutable(pos.add(rand.nextInt(4), -1, rand.nextInt(4)), pos.add(rand.nextInt(4), 1, rand.nextInt(4)))) {
                 BlockPos blockPos = pos.down();
                 if (worldIn.getBlockState(blockPos) != ModBlocks.fieldGrass.getDefaultState() && worldIn.getBlockState(blockPos)==Blocks.GRASS
                         ||worldIn.getBlockState(blockPos) != ModBlocks.fieldGrass.getDefaultState() && worldIn.getBlockState(blockPos)==Blocks.STONE||
@@ -189,9 +192,7 @@ public class TiberiumGrowth extends BlockOre implements IGrowable {
                     worldIn.setBlockState(blockPos, ModBlocks.fieldGrass.getDefaultState());
 
                 }
-                if(worldIn.getBlockState(pos.up())==Blocks.LOG.getDefaultState()&&worldIn.getBlockState(pos.up())!=ModBlocks.tibMutLog.getDefaultState()||worldIn.getBlockState(pos.up())==Blocks.LOG2.getDefaultState()&&worldIn.getBlockState(blockpos2)!=ModBlocks.tibMutLog.getDefaultState()){
-                    worldIn.setBlockState(pos.up(),ModBlocks.tibMutLog.getDefaultState());
-                }
+
             }
 /*        int age=getAge(state);
            if (rand.nextInt(5) == 0) {
@@ -268,7 +269,7 @@ public class TiberiumGrowth extends BlockOre implements IGrowable {
 *///       }
 
     protected static float getGrowthChance(Block blockIn, World worldIn, BlockPos pos) {
-        float f = 4.0F;
+        float f = 1.0F;
         return f;
 
 

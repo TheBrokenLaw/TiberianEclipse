@@ -31,14 +31,14 @@ import java.util.Map;
 
 public class Record extends ItemRecord{
     private final String location;
-    private final String name;
+
     public Record(String record, SoundEvent sound, String name){
-        super(record, sound);
+        super("tiberianeclipse:"+record, sound);
         setCreativeTab(Main.creativeTab);
          GameRegistry.register(this, new ResourceLocation(Main.modId, name));
         setUnlocalizedName(name);
-        location=record;
-        this.name=record;
+        location="tiberianeclipse:music."+record;
+
     }
     @Nonnull
     @Override
@@ -46,7 +46,7 @@ public class Record extends ItemRecord{
     @SideOnly(Side.CLIENT)
 
     public void registerItemModel(Item item, int meta) {
-        Main.proxy.registerItemRenderer(item, 0, name);
+        Main.proxy.registerItemRenderer(item, 0, getUnlocalizedName());
     }
 
 }

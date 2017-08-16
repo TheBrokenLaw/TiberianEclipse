@@ -4,10 +4,7 @@ import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import tiberianeclipse.ClientProxy;
 import tiberianeclipse.item.tools.*;
-import tiberianeclipse.sounds.TESoundHandler;
 import tiberianeclipse.util.IModelProvider;
-import static tiberianeclipse.sounds.TESoundHandler.recordDarkValley;
-import static tiberianeclipse.sounds.TESoundHandler.recordEidolon;
 
 public class ModItems extends ClientProxy{
     // Tiberium Varieties
@@ -61,8 +58,8 @@ public class ModItems extends ClientProxy{
     public static BaseAxe cruentusAxe;
     public static BaseAxe arboreaAxe;
 */        //Music Discs
-    public static ItemRecordDarkValley recordDarkValley;
-    public static ItemRecordEidolon recordEidolon;
+    public static ItemRecordRainNite recordRainNite;
+    public static ItemRecordWhatLurks recordWhatLurks;
         //Intermediate Items
     public static ItemBase crushedRiparius;
     public static ItemBase crushedVinifera;
@@ -74,6 +71,8 @@ public class ModItems extends ClientProxy{
     public static ModArmor basicLegs;
     public static ModArmor basicFeet;
     public static ItemBase refinedTiberium;
+
+    public static DummyItem dummyItem;
     public static void init() {
         //Tiberium shards and clusters
         ripariusShard = register(new ItemBase("ripariusShard",0));
@@ -124,8 +123,8 @@ public class ModItems extends ClientProxy{
         arboreaAxe = register(new BaseAxe(BaseTool.arborea, "arboreaAxe"));
     */  refinedTibRod = register(new ItemBase("refinedTibRod",0));
                 //Music discs
-   //     recordDarkValley=new ItemRecordDarkValley();
-   //      recordEidolon=new ItemRecordEidolon();
+      recordRainNite=new ItemRecordRainNite();
+        recordWhatLurks=new ItemRecordWhatLurks();
                 //Armor
         basicChest=register(new ModArmor("basicChest",ArmorBase.basic, EntityEquipmentSlot.CHEST));
         basicHelm=register(new ModArmor("basicHelm",ArmorBase.basic, EntityEquipmentSlot.HEAD ));
@@ -140,6 +139,8 @@ public class ModItems extends ClientProxy{
         cruDustedGold=register(new ItemBase("cruDustedGold", 0));
         arbDustedIron=register(new ItemBase("arbDustedIron", 0));
         arbDustedGold=register(new ItemBase("arbDustedGold", 0));
+
+        dummyItem=register(new DummyItem());
     }
 
     private static <T extends Item> T register(T item) {

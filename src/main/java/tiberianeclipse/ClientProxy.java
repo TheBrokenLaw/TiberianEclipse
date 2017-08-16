@@ -16,6 +16,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import tiberianeclipse.block.ModBlocks;
 import tiberianeclipse.entities.ModEntities;
 import tiberianeclipse.item.ModItems;
+import tiberianeclipse.sounds.TESoundHandler;
 import tiberianeclipse.world.ModWorldGen;
 
 import static tiberianeclipse.Main.modId;
@@ -30,6 +31,7 @@ public class ClientProxy extends CommonProxy {
         ModItems.init();
         ModBlocks.init();
         ModEntities.init();
+        TESoundHandler.init();
 
     }
 

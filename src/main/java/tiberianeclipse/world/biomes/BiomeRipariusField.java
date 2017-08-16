@@ -39,17 +39,6 @@ public class BiomeRipariusField extends ModBiome {
 
     @Override
     public void decorate(World worldIn, Random rand, BlockPos pos) {
-        if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.SHROOM))
-        {
-
-            int i = rand.nextInt(32) + 8;
-            int j = rand.nextInt(32) + 8;
-            int height = worldIn.getHeight(pos.add(i, 0, j)).getY() * 2;
-            if (height < 1) height = 1;
-            int k = rand.nextInt(height);
-
-            tibMutTree.generate(worldIn, rand, pos.add(i, k, j));
-        }
         if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.GRASS))
         {
 
