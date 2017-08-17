@@ -2,7 +2,6 @@ package tiberianeclipse.block.tibcrystals;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -17,11 +16,11 @@ import tiberianeclipse.sounds.TESoundEvents;
 import java.util.Random;
 
 
-public class RipariusTree extends BlockBase {
+public class BlueFona extends BlockBase {
 
-    protected static final AxisAlignedBB TIB_AABB = new AxisAlignedBB(0D, -1D, 0D, 1D, 2D, 1D);
-    public RipariusTree(){
-        super(Material.WOOD, "ripariusTree", "axe", 5);
+    protected static final AxisAlignedBB TIB_AABB = new AxisAlignedBB(-.25D, -1D, -.25D, 1.25D, 2D, 1.25D);
+    public BlueFona(){
+        super(Material.WOOD, "blueFona", "axe", 5);
         this.setTickRandomly(true);
         this.setLightLevel(.75f);
     }

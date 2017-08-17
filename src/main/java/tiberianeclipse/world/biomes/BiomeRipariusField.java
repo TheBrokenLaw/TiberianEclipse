@@ -50,7 +50,7 @@ public class BiomeRipariusField extends ModBiome {
 
             ripariusPod.generate(worldIn, rand, pos.add(i, k, j));
         }
-       else if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.FLOWERS))
+        if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.FLOWERS))
        {
 
             int i = rand.nextInt(32) + 8;
@@ -61,7 +61,7 @@ public class BiomeRipariusField extends ModBiome {
 
             ripariusPod.generate(worldIn, rand, pos.add(i, k, j));
         }
-        else if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.TREE))
+        if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.TREE))
         {
 
             int i = rand.nextInt(32) + 8;

@@ -35,6 +35,7 @@ public class ModBlocks extends ClientProxy {
     public static BlockGrinder blockGrinder;
     //public static BlockProcessor blockProcessor;
     public static RipariusTree ripariusTree;
+    public static BlueFona blueFona;
 
 
     public static BlockCounter counter;
@@ -62,6 +63,7 @@ public class ModBlocks extends ClientProxy {
     //    counter=register(new BlockCounter());
     //    pedestal=register(new BlockPedestal("pedestal", Material.ROCK));
         ripariusTree=register(new RipariusTree());
+        blueFona=register(new BlueFona());
     }
     private static <T extends Block> T register(T block, ItemBlock itemBlock){
         GameRegistry.register(block);

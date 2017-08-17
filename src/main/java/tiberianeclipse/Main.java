@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import tiberianeclipse.block.ModBlocks;
 import tiberianeclipse.gui.ModGuiHandler;
+import tiberianeclipse.item.ModArmor;
 import tiberianeclipse.item.ModItems;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;

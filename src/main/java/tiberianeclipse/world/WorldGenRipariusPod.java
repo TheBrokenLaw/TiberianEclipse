@@ -42,7 +42,7 @@ public class WorldGenRipariusPod extends WorldGenerator {
         for (int i = 0; i < 128; ++i)
 
         {
-            BlockPos blockpos = position.add(rand.nextInt(32) - rand.nextInt(32), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(32) - rand.nextInt(32));
+            BlockPos blockpos = position.add(rand.nextInt(16) - rand.nextInt(16), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(16) - rand.nextInt(16));
 
             if (worldIn.isAirBlock(blockpos) && ModBlocks.ripariusPod.canBlockStay(worldIn, blockpos, this.ripariusPodState))
             {

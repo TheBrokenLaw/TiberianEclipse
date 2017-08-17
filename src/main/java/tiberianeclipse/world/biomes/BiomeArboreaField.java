@@ -53,7 +53,7 @@ public class BiomeArboreaField extends Biome {
 
             arboreaPod.generate(worldIn, rand, pos.add(i, k, j));
         }
-       else if(TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.FLOWERS))
+        if(TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.FLOWERS))
         {
 
             int i = rand.nextInt(32) + 8;
@@ -64,7 +64,7 @@ public class BiomeArboreaField extends Biome {
 
             viniferaPod.generate(worldIn, rand, pos.add(i, k, j));
         }
-        else if(TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.TREE))
+        if(TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.TREE))
         {
 
             int i = rand.nextInt(32) + 8;

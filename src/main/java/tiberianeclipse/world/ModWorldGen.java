@@ -29,7 +29,7 @@ public class ModWorldGen implements IWorldGenerator{
     private void generateOverworld(World world, Random rand, int blockX, int blockZ){
         WorldGenerator RipariusPod= new WorldGenRipariusPod();
         Biome biome= world.getBiome(new BlockPos(blockX, 64, blockZ));
-        if(biome== Biomes.PLAINS){
+        if(biome== Biomes.PLAINS||biome== Biomes.FOREST||biome== Biomes.MUTATED_DESERT||biome== Biomes.DESERT||biome== Biomes.DESERT_HILLS){
             int min =4;
             int max =12;
             int numPods=min+rand.nextInt(max);

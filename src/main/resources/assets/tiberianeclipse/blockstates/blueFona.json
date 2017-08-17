@@ -1,0 +1,24 @@
+{
+  "variants": {
+    "normal": [
+      {
+        "model": "tiberianeclipse:blueFlora"
+      },
+      {
+        "model": "tiberianeclipse:blueFlora",
+        "y": 90
+      },
+      {
+        "model": "tiberianeclipse:blueFlora",
+        "y": 180
+      },
+      {
+        "model": "tiberianeclipse:blueFlora",
+        "y": 270
+      }
+    ],
+    "inventory": {
+      "model": "tiberianeclipse:blueFlora"
+    }
+  }
+}

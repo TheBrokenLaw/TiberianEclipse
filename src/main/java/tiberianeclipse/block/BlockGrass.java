@@ -75,9 +75,14 @@ public class BlockGrass extends BlockGround {
 
                 blockpos1 = pos.add(rand.nextInt(3) - 1, rand.nextInt(2) - rand.nextInt(2), rand.nextInt(3) - 1);
             }
-            if(rand.nextInt(200)==0){
+            if(rand.nextInt(20)==0){
             if (worldIn.isAirBlock(blockpos1)&&worldIn.isAirBlock(blockpos1.up())&&worldIn.getBlockState(blockpos1.down())==ModBlocks.fieldGrass.getDefaultState()) {
                 worldIn.setBlockState(blockpos1.up(), ModBlocks.ripariusTree.getDefaultState(), 2);
+                }
+            }
+            if(rand.nextInt(20)==0){
+                if (worldIn.isAirBlock(blockpos1)&&worldIn.isAirBlock(blockpos1.up())&&worldIn.getBlockState(blockpos1.down())==ModBlocks.fieldGrass.getDefaultState()) {
+                    worldIn.setBlockState(blockpos1.up(), ModBlocks.blueFona.getDefaultState(), 2);
                 }
             }
         }

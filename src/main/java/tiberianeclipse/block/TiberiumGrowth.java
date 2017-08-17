@@ -148,10 +148,10 @@ public class TiberiumGrowth extends BlockOre implements IGrowable {
 
             if (rand.nextInt(10) == 0)
             {
-                int i = 16;
+                int i = 9;
                 int j = 4;
 
-                for (BlockPos blockpos : BlockPos.getAllInBoxMutable(pos.add(-4, -1, -4), pos.add(4, 1, 4)))
+                for (BlockPos blockpos : BlockPos.getAllInBoxMutable(pos.add(-1, -1, -1), pos.add(1, 1, 1)))
                 {
                     if (worldIn.getBlockState(blockpos).getBlock() == this)
                     {
