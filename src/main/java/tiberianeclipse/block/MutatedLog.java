@@ -30,20 +30,16 @@ public class MutatedLog extends BlockBase {
     {
         if (!worldIn.isRemote)
         {
+
+
+            BlockPos blockpos = pos.up();
+
+            if (worldIn.getBlockState(blockpos)== Blocks.LOG2 ||worldIn.getBlockState(blockpos)==Blocks.LOG)
             {
+                worldIn.setBlockState(blockpos, this.getDefaultState());
+            }
 
-                    for (int i = 0; i < 4; ++i)
-                    {
-                        BlockPos blockpos = pos.up();
 
-                        IBlockState iblockstate = worldIn.getBlockState(blockpos);
-
-                        if (iblockstate.getBlock()==Blocks.LOG2||iblockstate.getBlock() == Blocks.LOG2)
-                        {
-                            worldIn.setBlockState(blockpos, this.getDefaultState());
-                        }
-                    }
-                }
             }
         }
     }

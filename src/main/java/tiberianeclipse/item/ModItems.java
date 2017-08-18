@@ -1,6 +1,9 @@
 package tiberianeclipse.item;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import tiberianeclipse.ClientProxy;
 import tiberianeclipse.item.tools.*;
@@ -126,10 +129,10 @@ public class ModItems extends ClientProxy{
       recordRainNite=new ItemRecordRainNite();
         recordWhatLurks=new ItemRecordWhatLurks();
                 //Armor
-        basicChest=register(new ModArmor("basicChest",ArmorBase.basic, EntityEquipmentSlot.CHEST));
-        basicHelm=register(new ModArmor("basicHelm",ArmorBase.basic, EntityEquipmentSlot.HEAD ));
-        basicLegs=register(new ModArmor("basicLegs",ArmorBase.basic, EntityEquipmentSlot.LEGS));
-        basicFeet=register(new ModArmor( "basicFeet",ArmorBase.basic, EntityEquipmentSlot.FEET));
+        basicChest=register(new ModArmor("basicChest",ModItems.basic, EntityEquipmentSlot.CHEST,1));
+        basicHelm=register(new ModArmor("basicHelm",ModItems.basic, EntityEquipmentSlot.HEAD ,0));
+        basicLegs=register(new ModArmor("basicLegs",ModItems.basic, EntityEquipmentSlot.LEGS,2));
+        basicFeet=register(new ModArmor( "basicFeet",ModItems.basic, EntityEquipmentSlot.FEET,3));
                 //Misc
         ripDustedIron=register(new ItemBase("ripDustedIron", 0));
         ripDustedGold=register(new ItemBase("ripDustedGold", 0));
@@ -142,6 +145,7 @@ public class ModItems extends ClientProxy{
 
         dummyItem=register(new DummyItem());
     }
+    public static ItemArmor.ArmorMaterial basic = EnumHelper.addArmorMaterial("BASIC", "tiberianeclipse:basicArmor", 60, new int[]{4, 9, 7, 4}, 8, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0.0f);
 
     private static <T extends Item> T register(T item) {
         GameRegistry.register(item);

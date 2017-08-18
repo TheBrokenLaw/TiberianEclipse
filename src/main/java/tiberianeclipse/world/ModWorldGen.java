@@ -8,7 +8,7 @@ import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
-import tiberianeclipse.world.biomes.ModBiomeManager;
+import tiberianeclipse.world.biomes.ModBiomes;
 
 import java.util.Random;
 
@@ -41,10 +41,10 @@ public class ModWorldGen implements IWorldGenerator{
         }
         WorldGenerator mutatedTree=new WorldGenMutatedTree(false, false);
        if(
-                 biome== ModBiomeManager.ripariusField
-               ||biome== ModBiomeManager.viniferaField
-               ||biome== ModBiomeManager.cruentusField
-               ||biome== ModBiomeManager.arboreaField){
+                 biome== ModBiomes.ripariusField
+               ||biome== ModBiomes.viniferaField
+               ||biome== ModBiomes.cruentusField
+               ||biome== ModBiomes.arboreaField){
            int min =4;
            int max =12;
            int numTrees=min+rand.nextInt(max);

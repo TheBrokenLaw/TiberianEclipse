@@ -41,7 +41,9 @@ public class BlockGrass extends BlockGround {
 
                         IBlockState iblockstate = worldIn.getBlockState(blockpos.up());
                         IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
-
+                        if(worldIn.getBlockState(pos.down())!= ModBlocks.tiberiumGround && worldIn.getBlockState(pos.down())==Blocks.DIRT){
+                            worldIn.setBlockState(pos.down(), ModBlocks.tiberiumGround.getDefaultState());
+                        }
                         if (iblockstate1.getBlock() == ModBlocks.tiberiumGround && worldIn.getLightFromNeighbors(blockpos.up()) >= 4 && iblockstate.getLightOpacity(worldIn, pos.up()) <= 2) {
                             worldIn.setBlockState(blockpos, ModBlocks.fieldGrass.getDefaultState());
                         }

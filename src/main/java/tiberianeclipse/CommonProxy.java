@@ -10,7 +10,7 @@ import tiberianeclipse.block.ModBlocks;
 import tiberianeclipse.entities.ModEntities;
 import tiberianeclipse.item.ModItems;
 import tiberianeclipse.recipes.ModRecipes;
-import tiberianeclipse.world.biomes.ModBiomeManager;
+import tiberianeclipse.world.biomes.ModBiomes;
 
 import java.io.File;
 
@@ -26,7 +26,7 @@ public class CommonProxy {
         ModBlocks.init();
         ModRecipes.init();
         ModEntities.init();
-        ModBiomeManager.registerBiomes();
+        ModBiomes.registerBiomes();
 
     }
     public String localize(String unlocalized, Object...args){

@@ -2,8 +2,8 @@
 {
   "modid": "tiberianeclipse",
   "name": "Tiberian Eclipse",
-  "description": "Early proof of concept build.",
-  "version": "0.0.7a",
+  "description": "Early build.",
+  "version": "0.0.7b",
   "mcversion": "1.10.2",
   "url": "https://github.com/TheBrokenLaw/TiberianEclipse",
   "updateUrl": "",

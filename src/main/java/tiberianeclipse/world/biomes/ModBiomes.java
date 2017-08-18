@@ -13,7 +13,7 @@ import tiberianeclipse.Main;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ModBiomeManager extends ClientProxy{
+public class ModBiomes extends ClientProxy{
    public static List<Biome> biomeList=new ArrayList<>();
     public static Biome ripariusField =new BiomeRipariusField();
     public static Biome viniferaField =new BiomeViniferaField();

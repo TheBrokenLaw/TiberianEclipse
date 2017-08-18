@@ -23,30 +23,33 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import tiberianeclipse.Main;
+import tiberianeclipse.util.IModelProvider;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Map;
 
-public class Record extends ItemRecord{
+public class Record extends ItemRecord implements IModelProvider {
     private final String location;
-
+    protected String name;
     public Record(String record, SoundEvent sound, String name){
         super("tiberianeclipse:"+record, sound);
         setCreativeTab(Main.creativeTab);
          GameRegistry.register(this, new ResourceLocation(Main.modId, name));
         setUnlocalizedName(name);
+        this.name=name;
         location="tiberianeclipse:music."+record;
 
     }
     @Nonnull
     @Override
     public ResourceLocation getRecordResource(String name){return new ResourceLocation(location);}
-    @SideOnly(Side.CLIENT)
 
-    public void registerItemModel(Item item, int meta) {
-        Main.proxy.registerItemRenderer(item, 0, getUnlocalizedName());
+
+
+    @Override
+    public void registerItemModel(Item item, int meta) {Main.proxy.registerItemRenderer(item, 0, name);
+
     }
-
 }

@@ -7,8 +7,8 @@ import tiberianeclipse.Main;
 
 public class ModArmor extends ItemArmor {
     private String name;
-    public ModArmor(String name,ArmorMaterial material, EntityEquipmentSlot slot){
-        super(material, 0, slot);
+    public ModArmor(String name,ArmorMaterial material, EntityEquipmentSlot slot, int renderIndex){
+        super(material, renderIndex, slot);
         setRegistryName(name);
         setUnlocalizedName(name);
         this.name=name;

@@ -6,7 +6,6 @@ import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import tiberianeclipse.block.ModBlocks;
 import tiberianeclipse.gui.ModGuiHandler;
-import tiberianeclipse.item.ModArmor;
 import tiberianeclipse.item.ModItems;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -16,14 +15,14 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import tiberianeclipse.recipes.ModRecipes;
 import tiberianeclipse.util.EclipseTab;
 import tiberianeclipse.world.ModWorldGen;
-import tiberianeclipse.world.biomes.ModBiomeManager;
+import tiberianeclipse.world.biomes.ModBiomes;
 
 @Mod(modid = Main.modId, name = Main.name, version = Main.version, acceptedMinecraftVersions = "[1.10.2]")
 public class Main {
 
     public static final String modId = "tiberianeclipse";
     public static final String name = "Tiberian Eclipse";
-    public static final String version = "1.10.2-0.07a";
+    public static final String version = "1.10.2-0.07b";
     @Mod.Instance(modId)
     public static Main instance;
     @SidedProxy(serverSide = "tiberianeclipse.CommonProxy", clientSide = "tiberianeclipse.ClientProxy")
@@ -38,7 +37,7 @@ public class Main {
         ModItems.init();
         ModBlocks.init();
         GameRegistry.registerWorldGenerator(new ModWorldGen(), 50);
-        ModBiomeManager.registerBiomes();
+        ModBiomes.registerBiomes();
         NetworkRegistry.INSTANCE.registerGuiHandler(this,new ModGuiHandler());
 
     }

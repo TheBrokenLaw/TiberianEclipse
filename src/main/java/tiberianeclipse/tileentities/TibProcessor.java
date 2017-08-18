@@ -46,10 +46,10 @@ public class TibProcessor extends BaseTileEntity<TileEntityTibProcessor> {
         if (!world.isRemote) {
             TileEntityTibProcessor tile = getTileEntity(world, pos);
             IItemHandler itemHandler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, side);
-            if (player.isSneaking()) {
+
                player.openGui(Main.instance, ModGuiHandler.TIBPROCESSOR,world,pos.getX(),pos.getY(),pos.getZ());
             }
-        }
+
         return true;
     }
     @Override

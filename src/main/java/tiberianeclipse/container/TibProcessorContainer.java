@@ -26,6 +26,18 @@ public class TibProcessorContainer extends Container {
                 tibprocessor.markDirty();
             }
         });
+        addSlotToContainer(new SlotItemHandler(inventory, 1, 56, 53){
+            @Override
+            public void onSlotChanged() {
+                tibprocessor.markDirty();
+            }
+        });
+        addSlotToContainer(new SlotItemHandler(inventory, 2, 116, 35){
+            @Override
+            public void onSlotChanged() {
+                tibprocessor.markDirty();
+            }
+        });
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 9; j++) {
