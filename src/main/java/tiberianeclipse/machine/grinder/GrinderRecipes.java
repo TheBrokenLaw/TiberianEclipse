@@ -1,4 +1,4 @@
-package tiberianeclipse.machine;
+package tiberianeclipse.machine.grinder;
 
 import com.google.common.collect.Maps;
 import net.minecraft.init.Blocks;

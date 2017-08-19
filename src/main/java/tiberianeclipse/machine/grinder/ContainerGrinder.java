@@ -1,4 +1,4 @@
-package tiberianeclipse.machine;
+package tiberianeclipse.machine.grinder;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;

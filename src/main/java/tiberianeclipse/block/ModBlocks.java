@@ -9,7 +9,7 @@ import tiberianeclipse.block.counter.BlockCounter;
 import tiberianeclipse.block.pedestal.BlockPedestal;
 import tiberianeclipse.block.tibcrystals.*;
 import tiberianeclipse.item.ModItems;
-import tiberianeclipse.machine.BlockGrinder;
+import tiberianeclipse.machine.grinder.BlockGrinder;
 import tiberianeclipse.tileentities.BaseTileEntity;
 import tiberianeclipse.tileentities.TibProcessor;
 import tiberianeclipse.util.IModelProvider;
