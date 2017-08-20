@@ -18,7 +18,7 @@
       }
     ],
     "inventory": {
-      "model": "tiberianeclipse:blueFlora"
+      "model": "tiberianeclipse:blueFlora", "scale":0.3
     }
   }
 }

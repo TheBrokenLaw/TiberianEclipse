@@ -1,0 +1,17 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "tiberianeclipse:tibMeteor"
+    },
+  "variants": {
+    "normal": [
+      {"model": "tiberianeclipse:tibMeteor"},
+      {"model": "tiberianeclipse:tibMeteor","y": 90},
+      {"model": "tiberianeclipse:tibMeteor","y": 180},
+      {"model": "tiberianeclipse:tibMeteor","y": 270}
+    ],
+    "inventory": {
+      "model": "tiberianeclipse:tibMeteor", "scale": 0.5
+    }
+  }
+}

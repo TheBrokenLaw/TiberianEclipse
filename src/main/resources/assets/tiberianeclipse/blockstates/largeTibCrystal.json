@@ -1,0 +1,24 @@
+{
+  "variants": {
+    "normal": [
+      {
+        "model": "tiberianeclipse:largeTibCrystal.obj"
+      },
+      {
+        "model": "tiberianeclipse:largeTibCrystal.obj",
+        "y": 90
+      },
+      {
+        "model": "tiberianeclipse:largeTibCrystal.obj",
+        "y": 180
+      },
+      {
+        "model": "tiberianeclipse:largeTibCrystal.obj",
+        "y": 270
+      }
+    ],
+    "inventory": {
+      "model": "tiberianeclipse:item/ripariusPod"
+    }
+  }
+}

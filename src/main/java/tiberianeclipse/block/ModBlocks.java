@@ -8,6 +8,7 @@ import tiberianeclipse.ClientProxy;
 import tiberianeclipse.block.counter.BlockCounter;
 import tiberianeclipse.block.pedestal.BlockPedestal;
 import tiberianeclipse.block.tibcrystals.*;
+import tiberianeclipse.block.tibmeteor.TibMeteor;
 import tiberianeclipse.item.ModItems;
 import tiberianeclipse.machine.grinder.BlockGrinder;
 import tiberianeclipse.tileentities.BaseTileEntity;
@@ -36,7 +37,7 @@ public class ModBlocks extends ClientProxy {
     //public static BlockProcessor blockProcessor;
     public static RipariusTree ripariusTree;
     public static BlueFona blueFona;
-
+    public static TibMeteor tibMeteor;
 
     public static BlockCounter counter;
     public static BlockPedestal pedestal;
@@ -64,6 +65,7 @@ public class ModBlocks extends ClientProxy {
     //    pedestal=register(new BlockPedestal("pedestal", Material.ROCK));
         ripariusTree=register(new RipariusTree());
         blueFona=register(new BlueFona());
+        tibMeteor=register(new TibMeteor());
     }
     private static <T extends Block> T register(T block, ItemBlock itemBlock){
         GameRegistry.register(block);
